@@ -1,10 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/Utils/configuration.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/widgets/padding_widgets.dart';
 
 Widget header() {
   return Container(
     width: Get.width,
-    height: 30,
-    color: Colors.red,
+    height: 26,
+    color: black.withOpacity(0.2),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        paddingHorizontal16(),
+        Icon(
+          FontAwesomeIcons.apple,
+          size: 18,
+          color: white,
+        ),
+        paddingHorizontal16(),
+        Text(
+          'Finder',
+          style: whiteTitleSmall,
+        ),
+        paddingHorizontal16(),
+        Text(
+          'About Me',
+          style: whiteBodySmall,
+        ),
+        paddingHorizontal16(),
+        Text(
+          'Contact',
+          style: whiteBodySmall,
+        ),
+        paddingHorizontal16(),
+        Text(
+          'Projects',
+          style: whiteBodySmall,
+        )
+      ],
+    ),
   );
 }
