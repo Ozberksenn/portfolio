@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../widgets/bottom_widget.dart';
 import '../widgets/header_widget.dart';
 
 class HomeView extends StatelessWidget {
@@ -18,7 +18,30 @@ class HomeView extends StatelessWidget {
                 image: NetworkImage(
                     'https://ucarecdn.com/4556dc02-e7dd-4616-a725-2eb65bc9c4f2/background.png'))),
         child: Column(
-          children: [header()],
+          children: [
+            header(),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: Container(
+                        child: Column(
+                          children: [],
+                        ),
+                      )),
+                  Expanded(
+                      flex: 6,
+                      child: Container(
+                        child: Column(
+                          children: [],
+                        ),
+                      )),
+                ],
+              ),
+            ),
+            bottom()
+          ],
         ),
       ),
     );

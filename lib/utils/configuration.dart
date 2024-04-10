@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 Color white = Colors.white;
 Color black = Colors.black;
+var blackOpacity = Colors.black.withOpacity(0.2);
 
 // fonts
 

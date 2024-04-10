@@ -9,7 +9,7 @@ Widget header() {
   return Container(
     width: Get.width,
     height: 26,
-    color: black.withOpacity(0.2),
+    color: blackOpacity,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
