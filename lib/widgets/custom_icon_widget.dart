@@ -6,15 +6,15 @@ Widget custoumIcon({String? iconName, Color? bgColor, String? imageUrl}) {
   return Column(
     children: [
       Container(
-        width: 44,
-        height: 44,
+        width: 48,
+        height: 48,
         decoration: BoxDecoration(
             image: imageUrl != null
                 ? DecorationImage(
                     fit: BoxFit.cover, image: NetworkImage(imageUrl))
                 : null,
             color: bgColor ?? Colors.transparent,
-            borderRadius: BorderRadius.circular(8.0)),
+            borderRadius: BorderRadius.circular(12.0)),
       ),
       paddingVertical8(),
       iconName != null

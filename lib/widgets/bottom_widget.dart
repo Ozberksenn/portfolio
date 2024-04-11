@@ -24,7 +24,7 @@ Widget bottom() {
             custoumIcon(
                 bgColor: white,
                 imageUrl:
-                    "https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Mail-512.png"),
+                    "https://ucarecdn.com/04f495f0-fe3a-4332-992b-ff27e72e092d/68638iconscomputeriphoneemailgmailfreepnghq.png"),
             paddingHorizontal16(),
             custoumIcon(
                 imageUrl:
@@ -33,13 +33,13 @@ Widget bottom() {
             paddingHorizontal16(),
             custoumIcon(
                 imageUrl:
-                    "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png",
+                    "https://ucarecdn.com/185ae79e-c766-4990-9f4b-c661977c2f6f/spotii.png",
                 bgColor: white),
             paddingHorizontal16(),
             custoumIcon(
-                imageUrl:
-                    "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png",
-                bgColor: white),
+              imageUrl:
+                  "https://ucarecdn.com/4371b260-7181-4bdd-aa7e-5b450e64f95f/iPhoneKisilerdestekapplepng.webp",
+            ),
           ],
         ),
       ),

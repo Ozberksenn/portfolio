@@ -12,33 +12,26 @@ Widget menu() {
       children: [
         custoumIcon(
             bgColor: white,
-            iconName: "Linkedin",
+            iconName: "Projects",
             imageUrl:
                 "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
         paddingVertical16(),
         custoumIcon(
-            bgColor: white,
-            iconName: "Linkedin",
+            iconName: "Resume",
             imageUrl:
-                "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
+                "https://ucarecdn.com/6f05fac5-7642-4b82-a4e6-eeddf0ed25aa/Adobe_Acrobat_Reader.webp"),
         paddingVertical16(),
         custoumIcon(
             bgColor: white,
-            iconName: "Linkedin",
+            iconName: "Github",
             imageUrl:
-                "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
+                "https://ucarecdn.com/2afb6a87-55a6-4fff-b6e1-684c3e437baa/github6980894_1280.webp"),
         paddingVertical16(),
         custoumIcon(
-            bgColor: white,
+            bgColor: Colors.transparent,
             iconName: "Linkedin",
             imageUrl:
-                "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
-        paddingVertical16(),
-        custoumIcon(
-            bgColor: white,
-            iconName: "Linkedin",
-            imageUrl:
-                "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
+                "https://ucarecdn.com/eb590850-8828-48e2-b4f6-1a20c8605195/linkedin.png"),
       ],
     ),
   );
