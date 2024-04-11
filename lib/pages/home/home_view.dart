@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../widgets/bottom_widget.dart';
-import '../widgets/header_widget.dart';
-import '../widgets/menu_widget.dart';
+import '../../widgets/bottom_widget.dart';
+import '../../widgets/header_widget.dart';
+import '../../widgets/menu_widget.dart';
+import 'widgets/weather_widgets.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -28,8 +29,11 @@ class HomeView extends StatelessWidget {
                   Expanded(
                       flex: 6,
                       child: Container(
+                        padding: const EdgeInsets.all(16.0),
                         child: Column(
-                          children: [],
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [weather()],
                         ),
                       )),
                 ],

@@ -8,8 +8,8 @@ Color black = Colors.black;
 var blackOpacity = Colors.black.withOpacity(0.2);
 
 // fonts
-
 var whiteTitleSmall = Get.textTheme.titleSmall!.copyWith(color: white);
 var whiteBodySmall = Get.textTheme.bodySmall!.copyWith(color: white);
 var customIconText =
     Get.textTheme.titleSmall!.copyWith(color: white, fontSize: 12);
+var whiteTileLarge = Get.textTheme.titleLarge!.copyWith(color: white);
