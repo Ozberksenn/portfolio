@@ -46,10 +46,12 @@ Widget contactbottomSheet() {
                   ),
                 ),
                 paddingVertical8(),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Icon(CupertinoIcons.phone),
-                  Icon(CupertinoIcons.mail)
-                ]),
+                const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(CupertinoIcons.phone),
+                      Icon(CupertinoIcons.mail)
+                    ]),
                 paddingVertical16(),
                 Text(
                   "phone  +90 534 052 66 99",

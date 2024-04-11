@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/configuration.dart';
 
 class AppTheme {
   static ThemeData light = lightTheme;
   static ThemeData dark = darkTheme;
 }
 
-ThemeData lightTheme = ThemeData(useMaterial3: true);
+ThemeData lightTheme = ThemeData(useMaterial3: true, dividerColor: greyBorder);
 
-ThemeData darkTheme = ThemeData();
+ThemeData darkTheme = lightTheme;
