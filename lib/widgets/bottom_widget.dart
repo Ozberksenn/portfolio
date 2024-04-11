@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/custom_icon_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
-import '../pages/home/widgets/bottom_sheet_widgets.dart';
+import '../pages/home/widgets/contact_bottom_sheet_widgets.dart';
 import '../utils/configuration.dart';
 import 'custom_bottom_sheet_widget.dart';
 
