@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/bottom_widget.dart';
 import '../widgets/header_widget.dart';
+import '../widgets/menu_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -23,13 +24,7 @@ class HomeView extends StatelessWidget {
             Expanded(
               child: Row(
                 children: [
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        child: Column(
-                          children: [],
-                        ),
-                      )),
+                  Expanded(flex: 1, child: menu()),
                   Expanded(
                       flex: 6,
                       child: Container(

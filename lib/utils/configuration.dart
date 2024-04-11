@@ -11,3 +11,5 @@ var blackOpacity = Colors.black.withOpacity(0.2);
 
 var whiteTitleSmall = Get.textTheme.titleSmall!.copyWith(color: white);
 var whiteBodySmall = Get.textTheme.bodySmall!.copyWith(color: white);
+var customIconText =
+    Get.textTheme.titleSmall!.copyWith(color: white, fontSize: 12);

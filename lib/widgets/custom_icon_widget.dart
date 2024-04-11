@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/configuration.dart';
+import 'package:portfolio/widgets/padding_widgets.dart';
 
 Widget custoumIcon({String? iconName, Color? bgColor, String? imageUrl}) {
   return Column(
     children: [
       Container(
-        width: 36,
-        height: 36,
+        width: 44,
+        height: 44,
         decoration: BoxDecoration(
             image: imageUrl != null
                 ? DecorationImage(
@@ -14,7 +16,13 @@ Widget custoumIcon({String? iconName, Color? bgColor, String? imageUrl}) {
             color: bgColor ?? Colors.transparent,
             borderRadius: BorderRadius.circular(8.0)),
       ),
-      iconName != null ? Text(iconName) : const SizedBox()
+      paddingVertical8(),
+      iconName != null
+          ? Text(
+              iconName,
+              style: customIconText,
+            )
+          : const SizedBox()
     ],
   );
 }
