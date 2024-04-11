@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/custom_icon_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
-
+import '../pages/home/widgets/bottom_sheet_widgets.dart';
 import '../utils/configuration.dart';
+import 'custom_bottom_sheet_widget.dart';
 
 Widget bottom() {
   return Row(
@@ -37,6 +38,7 @@ Widget bottom() {
                 bgColor: white),
             paddingHorizontal16(),
             custoumIcon(
+              onTap: () => customBottomSheet(children: [contactbottomSheet()]),
               imageUrl:
                   "https://ucarecdn.com/4371b260-7181-4bdd-aa7e-5b450e64f95f/iPhoneKisilerdestekapplepng.webp",
             ),

@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 
 Color white = Colors.white;
 Color black = Colors.black;
-Color grey = const Color.fromARGB(255, 216, 210, 210);
+const dark = Color.fromRGBO(38, 36, 43, 1);
+Color greyBorder = const Color.fromARGB(255, 216, 210, 210);
 var blackOpacity = Colors.black.withOpacity(0.2);
 
 // fonts

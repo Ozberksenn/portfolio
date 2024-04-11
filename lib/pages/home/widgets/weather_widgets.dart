@@ -10,7 +10,7 @@ Widget weather() {
     decoration: BoxDecoration(
         color: blackOpacity,
         borderRadius: BorderRadius.circular(16.0),
-        border: Border.all(width: 0.2, color: grey)),
+        border: Border.all(width: 0.2, color: greyBorder)),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
