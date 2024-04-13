@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/Utils/configuration.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
 import 'package:portfolio/utils/utils.dart';
+import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 
 Widget header() {
@@ -28,9 +30,12 @@ Widget header() {
               style: whiteTitleSmall,
             ),
             paddingHorizontal16(),
-            Text(
-              'About Me',
-              style: whiteBodySmall,
+            InkWell(
+              onTap: () => customBottomSheet(children: [aboutMeBottomSheet()]),
+              child: Text(
+                'About Me',
+                style: whiteBodySmall,
+              ),
             ),
             paddingHorizontal16(),
             Text(
