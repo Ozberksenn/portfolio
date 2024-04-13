@@ -8,6 +8,7 @@ Color black = Colors.black;
 const dark = Color.fromRGBO(38, 36, 43, 1);
 Color greyBorder = const Color.fromARGB(255, 216, 210, 210);
 var blackOpacity = Colors.black.withOpacity(0.2);
+var blue = Colors.blue;
 
 // fonts
 var whiteTitleSmall = Get.textTheme.titleSmall!.copyWith(color: white);

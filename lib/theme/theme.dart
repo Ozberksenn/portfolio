@@ -6,6 +6,9 @@ class AppTheme {
   static ThemeData dark = darkTheme;
 }
 
-ThemeData lightTheme = ThemeData(useMaterial3: true, dividerColor: greyBorder);
+ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
+    dividerColor: greyBorder,
+    dividerTheme: const DividerThemeData(color: Colors.grey, thickness: 0.2));
 
 ThemeData darkTheme = lightTheme;

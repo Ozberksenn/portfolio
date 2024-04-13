@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
+import '../../../widgets/custom_circular_icon_widget.dart';
 
 Widget contactbottomSheet() {
   return Material(
@@ -45,33 +46,37 @@ Widget contactbottomSheet() {
                     ),
                   ),
                 ),
-                paddingVertical8(),
-                const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(CupertinoIcons.phone),
-                      Icon(CupertinoIcons.mail)
-                    ]),
                 paddingVertical16(),
+                SizedBox(
+                  width: Get.width / 6,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        customCircularIcon(
+                            title: "call", icon: CupertinoIcons.phone_fill),
+                        customCircularIcon(
+                            title: "mail", icon: CupertinoIcons.mail),
+                        customCircularIcon(title: "web", icon: Icons.language),
+                        customCircularIcon(
+                            title: "share", icon: CupertinoIcons.share),
+                      ]),
+                ),
+                paddingVertical32(),
                 Text(
                   "phone  +90 534 052 66 99",
-                  style: whiteBodySmall,
+                  style: whiteTitleSmall,
                   textAlign: TextAlign.center,
                 ),
-                paddingVertical8(),
-                Divider(),
-                paddingVertical8(),
+                const Divider(),
                 Text(
                   "email  ozberksenn@gmail.com",
-                  style: whiteBodySmall,
+                  style: whiteTitleSmall,
                   textAlign: TextAlign.center,
                 ),
-                paddingVertical8(),
-                Divider(),
-                paddingVertical8(),
+                const Divider(),
                 Text(
                   "linkedin  https://linkedin",
-                  style: whiteBodySmall,
+                  style: whiteTitleSmall,
                   textAlign: TextAlign.center,
                 )
               ],

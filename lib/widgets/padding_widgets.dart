@@ -15,3 +15,7 @@ Widget paddingVertical8() {
 Widget paddingVertical16() {
   return const SizedBox(height: 16);
 }
+
+Widget paddingVertical32() {
+  return const SizedBox(height: 32);
+}
