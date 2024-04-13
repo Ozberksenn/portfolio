@@ -23,7 +23,7 @@ Widget custoumIcon(
               borderRadius: BorderRadius.circular(12.0)),
         ),
       ),
-      paddingVertical8(),
+      iconName != null ? paddingVertical8() : const SizedBox(),
       iconName != null
           ? Text(
               iconName,
