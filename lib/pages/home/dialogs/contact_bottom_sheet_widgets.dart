@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
+import '../../../widgets/button_widget.dart';
 import '../../../widgets/custom_circular_icon_widget.dart';
 import 'bottom_sheet_header_widget.dart';
 
@@ -80,19 +81,7 @@ Widget contactbottomSheet() {
                   textAlign: TextAlign.center,
                 ),
                 paddingVertical32(),
-                // todo : buton widgeta alınabilir. !
-                InkWell(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 8.0, vertical: 2.0),
-                    decoration: BoxDecoration(
-                        color: grey, borderRadius: BorderRadius.circular(6.0)),
-                    child: Text(
-                      "About Me",
-                      style: whiteTitleSmall,
-                    ),
-                  ),
-                )
+                button(title: "About Me")
               ],
             ),
           ),
