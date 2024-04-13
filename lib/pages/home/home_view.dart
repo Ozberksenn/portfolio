@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/pages/home/home_controller.dart';
 import '../../widgets/bottom_widget.dart';
 import '../../widgets/header_widget.dart';
 import '../../widgets/menu_widget.dart';
 import 'widgets/weather_widgets.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  HomeView({super.key});
 
+  final HomeController controller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,9 @@ class HomeView extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [weather()],
+                          children: [
+                            weather(controller),
+                          ],
                         ),
                       )),
                 ],

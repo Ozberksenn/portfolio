@@ -2,10 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/pages/home/home_controller.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
 
-Widget weather() {
+Widget weather(HomeController controller) {
   return ClipRRect(
     borderRadius: BorderRadius.circular(16.0),
     child: BackdropFilter(
@@ -17,25 +18,33 @@ Widget weather() {
             color: blackOpacity,
             borderRadius: BorderRadius.circular(16.0),
             border: Border.all(width: 0.2, color: greyBorder)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Bursa", style: whiteTitleSmall),
-            paddingVertical8(),
-            Text("7°", style: whiteheadlineSmall),
-            paddingVertical8(),
-            Icon(
-              CupertinoIcons.sun_dust,
-              color: white,
-              size: 24,
-            ),
-            paddingVertical8(),
-            Text(
-              "Clear",
-              style: whiteBodySmall,
-            )
-          ],
-        ),
+        child: Obx(() => controller.isWeather.value != false
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(controller.weathers!.name.toString(),
+                      style: whiteTitleSmall),
+                  paddingVertical8(),
+                  controller.weathers?.main != null
+                      ? Text("${controller.weathers!.main!.temp!.round()} ° ",
+                          style: whiteheadlineSmall)
+                      : const SizedBox(),
+                  paddingVertical8(),
+                  Icon(
+                    CupertinoIcons.sun_dust,
+                    color: white,
+                    size: 24,
+                  ),
+                  paddingVertical8(),
+                  controller.weathers?.weather != null
+                      ? Text(
+                          controller.weathers!.weather![0]!.main.toString(),
+                          style: whiteBodySmall,
+                        )
+                      : const SizedBox()
+                ],
+              )
+            : const SizedBox()),
       ),
     ),
   );
