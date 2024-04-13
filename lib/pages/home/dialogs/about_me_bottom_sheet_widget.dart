@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:portfolio/widgets/button_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
 import 'bottom_sheet_header_widget.dart';
@@ -9,8 +10,7 @@ Widget aboutMeBottomSheet() {
   return Material(
     borderRadius: BorderRadius.circular(8.0),
     child: Container(
-      width: Get.width / 3.4,
-      height: Get.height / 1.4,
+      width: Get.width / 3.8,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -57,7 +57,7 @@ Widget aboutMeBottomSheet() {
               ],
             ),
           ),
-          paddingVertical16(),
+          paddingVertical32(),
           SizedBox(
             width: Get.width / 5,
             child: Row(
@@ -91,6 +91,16 @@ Widget aboutMeBottomSheet() {
               ],
             ),
           ),
+          paddingVertical32(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              button(title: "My projects"),
+              paddingHorizontal16(),
+              button(title: "Contact")
+            ],
+          ),
+          paddingVertical32(),
         ],
       ),
     ),
