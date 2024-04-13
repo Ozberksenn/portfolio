@@ -10,7 +10,6 @@ Widget contactbottomSheet() {
     borderRadius: BorderRadius.circular(8.0),
     child: Container(
       width: Get.width / 3.4,
-      height: Get.height / 2,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -78,6 +77,18 @@ Widget contactbottomSheet() {
                   "linkedin  https://linkedin",
                   style: whiteTitleSmall,
                   textAlign: TextAlign.center,
+                ),
+                paddingVertical32(),
+                // todo : buton widgeta alınabilir. !
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 2.0),
+                  decoration: BoxDecoration(
+                      color: grey, borderRadius: BorderRadius.circular(6.0)),
+                  child: Text(
+                    "About Me",
+                    style: whiteTitleSmall,
+                  ),
                 )
               ],
             ),
