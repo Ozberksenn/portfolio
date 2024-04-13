@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/Utils/configuration.dart';
 import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
+import 'package:portfolio/pages/home/dialogs/contact_bottom_sheet_widgets.dart';
 import 'package:portfolio/pages/home/widgets/popup_menu_widget.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
@@ -15,7 +16,7 @@ Widget header() {
       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
       child: Container(
         width: Get.width,
-        height: 28,
+        height: 26,
         color: blackOpacity,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,25 +31,29 @@ Widget header() {
                   'Finder',
                   style: whiteTitleSmall,
                 ),
-                paddingHorizontal16(),
-                InkWell(
-                  onTap: () =>
-                      customBottomSheet(children: [aboutMeBottomSheet()]),
-                  child: Text(
-                    'About Me',
-                    style: whiteBodySmall,
-                  ),
-                ),
-                paddingHorizontal16(),
-                Text(
-                  'Contact',
-                  style: whiteBodySmall,
-                ),
-                paddingHorizontal16(),
-                Text(
-                  'Projects',
-                  style: whiteBodySmall,
-                )
+                paddingHorizontal8(),
+                TextButton(
+                    onPressed: () =>
+                        customBottomSheet(children: [aboutMeBottomSheet()]),
+                    child: Text(
+                      'About Me',
+                      style: whiteBodySmall,
+                    )),
+                paddingHorizontal8(),
+                TextButton(
+                    onPressed: () =>
+                        customBottomSheet(children: [contactbottomSheet()]),
+                    child: Text(
+                      'Contact',
+                      style: whiteBodySmall,
+                    )),
+                paddingHorizontal8(),
+                TextButton(
+                    onPressed: () => customBottomSheet(children: []),
+                    child: Text(
+                      'Projects',
+                      style: whiteBodySmall,
+                    )),
               ],
             ),
             Row(

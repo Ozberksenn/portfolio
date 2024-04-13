@@ -17,9 +17,9 @@ Widget bottom() {
           filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
           child: Container(
             margin: const EdgeInsets.symmetric(vertical: 8.0),
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8.0),
             decoration: BoxDecoration(
-                color: dark.withOpacity(0.2),
+                color: dark.withOpacity(0.1),
                 border: Border.all(width: 0.3, color: Colors.grey),
                 borderRadius: BorderRadius.circular(18.0)),
             child: Row(
@@ -46,6 +46,7 @@ Widget bottom() {
                     bgColor: white),
                 paddingHorizontal16(),
                 custoumIcon(
+                  bgColor: grey,
                   onTap: () =>
                       customBottomSheet(children: [contactbottomSheet()]),
                   imageUrl:
