@@ -24,3 +24,5 @@ String linkedinUrl = "https://www.linkedin.com/in/ozberksen/";
 String githubUrl = "https://github.com/Ozberksenn";
 String resumeUrl =
     "https://drive.google.com/file/d/1ylgEmtN--zlSa16HTLQlpKtd6QioFG6V/view?usp=sharing";
+String email = "ozberksenn@gmail.com";
+String phone = "+905340526699";

@@ -40,6 +40,15 @@ Future<void> launchPhone(String url) async {
   }
 }
 
+Future<void> launchEmail(String url) async {
+  if (await canLaunchUrl(Uri(scheme: 'mailto', path: url))) {
+    await launchUrl(Uri(scheme: 'mailto', path: url));
+  } else {
+    print("Could not launch url");
+    // showAlert('Could not launch $url');
+  }
+}
+
 showErrorDialog(String title, String message) {
   // todo buraya alert widgetı ekle.
   print(title);

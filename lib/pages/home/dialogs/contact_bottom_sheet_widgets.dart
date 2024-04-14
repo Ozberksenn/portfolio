@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
 import '../../../widgets/button_widget.dart';
@@ -51,13 +52,16 @@ Widget contactbottomSheet() {
                 SizedBox(
                   width: Get.width / 6,
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         customCircularIcon(
-                            title: "call", icon: CupertinoIcons.phone_fill),
+                            onTap: () => launchPhone(phone),
+                            title: "call",
+                            icon: CupertinoIcons.phone_fill),
                         customCircularIcon(
-                            title: "mail", icon: CupertinoIcons.mail),
-                        customCircularIcon(title: "web", icon: Icons.language),
+                            onTap: () => launchEmail(email),
+                            title: "mail",
+                            icon: CupertinoIcons.mail),
                         customCircularIcon(
                             title: "share", icon: CupertinoIcons.share),
                       ]),
