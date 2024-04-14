@@ -15,6 +15,7 @@ var blue = Colors.blue;
 var whiteTitleSmall = Get.textTheme.titleSmall!.copyWith(color: white);
 var whiteTitleLarge = Get.textTheme.titleLarge!.copyWith(color: white);
 var whiteBodySmall = Get.textTheme.bodySmall!.copyWith(color: white);
+var greyBodySmall = Get.textTheme.bodySmall!.copyWith(color: grey);
 var customIconText =
     Get.textTheme.titleSmall!.copyWith(color: white, fontSize: 12);
 var whiteheadlineSmall = Get.textTheme.headlineSmall!.copyWith(color: white);

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/utils/utils.dart';
+import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 
 import '../utils/configuration.dart';
 import 'custom_icon_widget.dart';
@@ -12,6 +14,7 @@ Widget menu() {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         custoumIcon(
+            onTap: () => customBottomSheet(children: [projectBottomSheet()]),
             bgColor: white,
             iconName: "Projects",
             imageUrl:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/configuration.dart';
+import '../widgets/project_card_widget.dart';
 import 'bottom_sheet_header_widget.dart';
 
 Widget projectBottomSheet() {
@@ -9,7 +9,7 @@ Widget projectBottomSheet() {
     borderRadius: BorderRadius.circular(8.0),
     child: Container(
       width: Get.width / 1.2,
-      height: Get.height / 1.4,
+      height: Get.height / 1.2,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -18,6 +18,12 @@ Widget projectBottomSheet() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           bottomHeader(title: "Projects"),
+          Text(
+            "My Projects",
+            style: whiteTitleLarge,
+          ),
+          const Divider(),
+          projectCard()
         ],
       ),
     ),
