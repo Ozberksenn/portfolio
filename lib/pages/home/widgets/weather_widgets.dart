@@ -45,10 +45,15 @@ Widget weather(HomeController controller) {
                 ],
               )
             : SizedBox(
-                child: Text(
-                  "weather information is currently unavailable",
-                  style: whiteTitleSmall,
-                  textAlign: TextAlign.center,
+                child: Column(
+                  children: [
+                    const Icon(CupertinoIcons.exclamationmark),
+                    Text(
+                      "unavailable weather info",
+                      style: whiteTitleSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
               )),
       ),
