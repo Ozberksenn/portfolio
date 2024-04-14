@@ -5,7 +5,15 @@ String formatDate(DateTime? value) {
   if (value == null) {
     return "";
   } else {
-    return DateFormat.MMMMd().format(value);
+    return DateFormat.MMMM().format(value);
+  }
+}
+
+String formatDay(DateTime? value) {
+  if (value == null) {
+    return "";
+  } else {
+    return DateFormat.d().format(value);
   }
 }
 

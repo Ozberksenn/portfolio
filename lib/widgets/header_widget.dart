@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:portfolio/Utils/configuration.dart';
 import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
 import 'package:portfolio/pages/home/dialogs/contact_bottom_sheet_widgets.dart';
+import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/pages/home/widgets/popup_menu_widget.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
@@ -49,7 +50,8 @@ Widget header() {
                     )),
                 paddingHorizontal8(),
                 TextButton(
-                    onPressed: () => customBottomSheet(children: []),
+                    onPressed: () =>
+                        customBottomSheet(children: [projectBottomSheet()]),
                     child: Text(
                       'Projects',
                       style: whiteBodySmall,
