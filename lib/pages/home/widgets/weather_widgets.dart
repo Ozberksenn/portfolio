@@ -44,7 +44,13 @@ Widget weather(HomeController controller) {
                       : const SizedBox()
                 ],
               )
-            : const SizedBox()),
+            : SizedBox(
+                child: Text(
+                  "weather information is currently unavailable",
+                  style: whiteTitleSmall,
+                  textAlign: TextAlign.center,
+                ),
+              )),
       ),
     ),
   );
