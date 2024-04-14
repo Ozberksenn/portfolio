@@ -17,6 +17,7 @@ String formatDateTime(DateTime? value) {
   }
 }
 
+// Go to url
 Future<void> launchToUrl(String? url) async {
   if (url == null) {
     showErrorDialog("Launch Url Error", "Url is empty");
@@ -25,6 +26,17 @@ Future<void> launchToUrl(String? url) async {
 
   if (!await launchUrl(Uri.parse(url))) {
     showErrorDialog("Launch Url Error", "Could not launch $url");
+  }
+}
+
+// PHONE
+Future<void> launchPhone(String url) async {
+  String phoneSchema = url.replaceAll(' ', '');
+  if (await canLaunchUrl(Uri(scheme: 'tel', path: phoneSchema))) {
+    await launchUrl(Uri(scheme: 'tel', path: phoneSchema));
+  } else {
+    print("Could not launch url");
+    // showAlert('Could not launch $url');
   }
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/utils.dart';
 
 import '../utils/configuration.dart';
 import 'custom_icon_widget.dart';
@@ -17,17 +18,20 @@ Widget menu() {
                 "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
         paddingVertical16(),
         custoumIcon(
+            onTap: () => launchToUrl(resumeUrl),
             iconName: "Resume",
             imageUrl:
                 "https://ucarecdn.com/6f05fac5-7642-4b82-a4e6-eeddf0ed25aa/Adobe_Acrobat_Reader.webp"),
         paddingVertical16(),
         custoumIcon(
+            onTap: () => launchToUrl(githubUrl),
             bgColor: white,
             iconName: "Github",
             imageUrl:
                 "https://ucarecdn.com/2afb6a87-55a6-4fff-b6e1-684c3e437baa/github6980894_1280.webp"),
         paddingVertical16(),
         custoumIcon(
+            onTap: () => launchToUrl(linkedinUrl),
             bgColor: Colors.transparent,
             iconName: "Linkedin",
             imageUrl:

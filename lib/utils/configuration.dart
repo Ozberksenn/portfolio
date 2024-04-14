@@ -18,3 +18,9 @@ var whiteBodySmall = Get.textTheme.bodySmall!.copyWith(color: white);
 var customIconText =
     Get.textTheme.titleSmall!.copyWith(color: white, fontSize: 12);
 var whiteheadlineSmall = Get.textTheme.headlineSmall!.copyWith(color: white);
+
+// links :
+String linkedinUrl = "https://www.linkedin.com/in/ozberksen/";
+String githubUrl = "https://github.com/Ozberksenn";
+String resumeUrl =
+    "https://drive.google.com/file/d/1ylgEmtN--zlSa16HTLQlpKtd6QioFG6V/view?usp=sharing";
