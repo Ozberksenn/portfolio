@@ -5,7 +5,11 @@ import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
 
 Widget projectCard(
-    {String? title, String? description, String? imageUrl, String? icon}) {
+    {String? title,
+    String? description,
+    String? imageUrl,
+    String? icon,
+    void Function()? onTap}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -17,6 +21,7 @@ Widget projectCard(
           child: Icon(
             appIcons[icon],
             size: 16,
+            color: dark,
           ),
         ),
         title: Text(
@@ -27,10 +32,10 @@ Widget projectCard(
           description ?? "",
           style: greyBodySmall,
         ),
+        trailing: projectCardButton(onTap),
       ),
       Container(
         margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
-        width: Get.width / 3,
         height: Get.height / 4.5,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
@@ -38,5 +43,20 @@ Widget projectCard(
                 fit: BoxFit.cover, image: NetworkImage(imageUrl.toString()))),
       )
     ],
+  );
+}
+
+Widget projectCardButton(void Function()? onTap) {
+  return InkWell(
+    onTap: onTap,
+    child: Container(
+      decoration: BoxDecoration(
+          color: white, borderRadius: BorderRadius.circular(12.0)),
+      padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 12.0),
+      child: Text(
+        'See',
+        style: Get.textTheme.bodyMedium!.copyWith(color: blue),
+      ),
+    ),
   );
 }
