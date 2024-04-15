@@ -1,21 +1,23 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/configuration.dart';
 
 Widget projectCard(
-    {String? title, String? description, String? imageUrl, String? profilUrl}) {
+    {String? title, String? description, String? imageUrl, String? icon}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       ListTile(
         leading: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image:
-                  DecorationImage(image: NetworkImage(profilUrl.toString()))),
+          padding: const EdgeInsets.all(10.0),
+          decoration:
+              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+          child: Icon(
+            appIcons[icon],
+            size: 16,
+          ),
         ),
         title: Text(
           title ?? "",

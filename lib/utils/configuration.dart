@@ -1,5 +1,6 @@
 // app colors :
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,3 +28,16 @@ String resumeUrl =
     "https://drive.google.com/file/d/1ylgEmtN--zlSa16HTLQlpKtd6QioFG6V/view?usp=sharing";
 String email = "ozberksenn@gmail.com";
 String phone = "+905340526699";
+
+// icons
+
+final appIcons = <String, IconData>{
+  "shopkeeper": CupertinoIcons.shopping_cart,
+  'chatSocket': CupertinoIcons.chat_bubble_2_fill,
+  'bereal': CupertinoIcons.person_2_alt,
+  'restaurant': Icons.restaurant,
+  'chatApp': CupertinoIcons.chat_bubble_text_fill,
+  'list': CupertinoIcons.today,
+  'file': CupertinoIcons.doc,
+  'survey': CupertinoIcons.doc_append
+};

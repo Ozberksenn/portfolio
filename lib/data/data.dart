@@ -9,9 +9,44 @@ List<dynamic> skill = [
 ];
 
 List<ProjectModel> projectData = [
-  ProjectModel(name: "", description: "", image: ""),
-  ProjectModel(name: "", description: "", image: ""),
-  ProjectModel(name: "", description: "", image: ""),
-  ProjectModel(name: "", description: "", image: ""),
-  ProjectModel(name: "", description: "", image: "")
+  ProjectModel(
+      name: "Shopkeeper",
+      description: "Flutter , PostgreSQL , Node JS",
+      image: "",
+      profileUrl: 'shopkeeper'),
+  ProjectModel(
+      name: "Chat Socket",
+      description: "Flutter with Node Js and Scoket IO",
+      profileUrl: 'chatSocket',
+      image: ""),
+  ProjectModel(
+      name: "Bereal Clone",
+      profileUrl: 'bereal',
+      description: "Flutter , MongoDB and Node JS",
+      image: ""),
+  ProjectModel(
+      name: "Restaurant",
+      profileUrl: 'restaurant',
+      description: "Flutter design",
+      image: ""),
+  ProjectModel(
+      name: "Chat App",
+      description: "React Native Project",
+      profileUrl: 'chatApp',
+      image: ""),
+  ProjectModel(
+      name: "List App",
+      profileUrl: 'list',
+      description: "Swift Basic project",
+      image: ""),
+  ProjectModel(
+      name: "File Upload",
+      profileUrl: 'file',
+      description: "Node Js Project",
+      image: ""),
+  ProjectModel(
+      name: "Survey",
+      profileUrl: 'survey',
+      description: "Node Js Project",
+      image: ""),
 ];

@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/data/data.dart';
@@ -40,12 +38,11 @@ Widget projectBottomSheet() {
                       itemCount: projectData.length,
                       itemBuilder: (context, index) {
                         return projectCard(
-                            title: "Project Name",
-                            description: "Project Description",
+                            title: projectData[index].name,
+                            description: projectData[index].description,
                             imageUrl:
                                 "https://ucarecdn.com/9a68fd1e-dfd1-47a1-85ef-b9914f625c90/Image.png",
-                            profilUrl:
-                                "https://ucarecdn.com/2afb6a87-55a6-4fff-b6e1-684c3e437baa/github6980894_1280.webp");
+                            icon: projectData[index].profileUrl);
                       }),
                 )
               ],
