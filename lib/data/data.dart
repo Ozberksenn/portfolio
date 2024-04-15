@@ -9,5 +9,9 @@ List<dynamic> skill = [
 ];
 
 List<ProjectModel> projectData = [
-  ProjectModel(name: "asda", description: "ssadsd", image: "sadssd")
+  ProjectModel(name: "", description: "", image: ""),
+  ProjectModel(name: "", description: "", image: ""),
+  ProjectModel(name: "", description: "", image: ""),
+  ProjectModel(name: "", description: "", image: ""),
+  ProjectModel(name: "", description: "", image: "")
 ];

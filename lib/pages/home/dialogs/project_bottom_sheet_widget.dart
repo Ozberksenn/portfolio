@@ -1,5 +1,8 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/data/data.dart';
 import '../../../utils/configuration.dart';
 import '../widgets/project_card_widget.dart';
 import 'bottom_sheet_header_widget.dart';
@@ -18,12 +21,36 @@ Widget projectBottomSheet() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           bottomHeader(title: "Projects"),
-          Text(
-            "My Projects",
-            style: whiteTitleLarge,
-          ),
-          const Divider(),
-          projectCard()
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "My Projects",
+                  style: whiteTitleLarge,
+                ),
+                const Divider(),
+                SizedBox(
+                  height: Get.height / 1.6,
+                  child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              childAspectRatio: 2, crossAxisCount: 2),
+                      itemCount: projectData.length,
+                      itemBuilder: (context, index) {
+                        return projectCard(
+                            title: "Project Name",
+                            description: "Project Description",
+                            imageUrl:
+                                "https://ucarecdn.com/9a68fd1e-dfd1-47a1-85ef-b9914f625c90/Image.png",
+                            profilUrl:
+                                "https://ucarecdn.com/2afb6a87-55a6-4fff-b6e1-684c3e437baa/github6980894_1280.webp");
+                      }),
+                )
+              ],
+            ),
+          )
         ],
       ),
     ),
