@@ -28,6 +28,8 @@ String resumeUrl =
     "https://drive.google.com/file/d/1ylgEmtN--zlSa16HTLQlpKtd6QioFG6V/view?usp=sharing";
 String email = "ozberksenn@gmail.com";
 String phone = "+905340526699";
+String backgrounImage =
+    'https://ucarecdn.com/4556dc02-e7dd-4616-a725-2eb65bc9c4f2/background.png';
 
 // icons
 

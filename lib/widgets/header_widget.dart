@@ -61,13 +61,17 @@ Widget header(AppController appController) {
             ),
             Row(
               children: [
-                TextButton(
-                    onPressed: () {
-                      appController.changeLanguage();
-                    },
-                    child: Text(
-                      appController.selectLanguage.value.toUpperCase(),
-                      style: whiteTitleSmall,
+                Container(
+                    decoration: BoxDecoration(
+                        color: white, borderRadius: BorderRadius.circular(4.0)),
+                    margin: const EdgeInsets.symmetric(horizontal: 12.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: InkWell(
+                      onTap: () => appController.changeLanguage(),
+                      child: Text(
+                        appController.selectLanguage.value.toUpperCase(),
+                        style: Get.textTheme.titleSmall,
+                      ),
                     )),
                 paddingHorizontal8(),
                 Text(

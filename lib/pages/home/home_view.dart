@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/pages/home/home_controller.dart';
+import '../../utils/configuration.dart';
 import '../../widgets/bottom_widget.dart';
 import '../../widgets/header_widget.dart';
 import '../../widgets/menu_widget.dart';
@@ -18,11 +19,9 @@ class HomeView extends StatelessWidget {
       body: Container(
         width: Get.width,
         height: Get.height,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://ucarecdn.com/4556dc02-e7dd-4616-a725-2eb65bc9c4f2/background.png'))),
+                fit: BoxFit.cover, image: NetworkImage(backgrounImage))),
         child: Column(
           children: [
             header(appController),
