@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:portfolio/pages/home/dialogs/contact_bottom_sheet_widgets.dart';
+import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/button_widget.dart';
+import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
 import 'bottom_sheet_header_widget.dart';
@@ -95,9 +98,19 @@ Widget aboutMeBottomSheet() {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              button(title: "My projects"),
+              button(
+                  title: "My projects",
+                  onTap: () {
+                    Get.back();
+                    customBottomSheet(children: [projectBottomSheet()]);
+                  }),
               paddingHorizontal16(),
-              button(title: "Contact")
+              button(
+                  title: "Contact",
+                  onTap: () {
+                    Get.back();
+                    customBottomSheet(children: [contactbottomSheet()]);
+                  })
             ],
           ),
           paddingVertical32(),
