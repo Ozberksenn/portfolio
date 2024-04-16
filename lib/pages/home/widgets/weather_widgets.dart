@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/pages/home/home_controller.dart';
@@ -30,11 +29,7 @@ Widget weather(HomeController controller) {
                           style: whiteheadlineSmall)
                       : const SizedBox(),
                   paddingVertical8(),
-                  Icon(
-                    CupertinoIcons.sun_dust,
-                    color: white,
-                    size: 24,
-                  ),
+                  weatherConditions(controller.weathers!.weather![0]!.main),
                   paddingVertical8(),
                   controller.weathers?.weather != null
                       ? Text(
@@ -59,4 +54,25 @@ Widget weather(HomeController controller) {
       ),
     ),
   );
+}
+
+weatherConditions(weather) {
+  switch (weather) {
+    case 'Clouds':
+      return Icon(
+        CupertinoIcons.sun_min,
+        color: white,
+      );
+    case 'Clear':
+      return Icon(
+        CupertinoIcons.sun_max,
+        color: white,
+      );
+    case 'Rain':
+      return Icon(
+        CupertinoIcons.sun_dust,
+        color: white,
+      );
+    default:
+  }
 }
