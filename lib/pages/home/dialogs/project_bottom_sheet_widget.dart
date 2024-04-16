@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:portfolio/utils/utils.dart';
 import '../../../utils/configuration.dart';
 import '../widgets/project_card_widget.dart';
 import 'bottom_sheet_header_widget.dart';
@@ -38,10 +39,12 @@ Widget projectBottomSheet() {
                       itemCount: projectData.length,
                       itemBuilder: (context, index) {
                         return projectCard(
+                            onTap: () {
+                              launchToUrl(projectData[index].routeUrl);
+                            },
                             title: projectData[index].name,
                             description: projectData[index].description,
-                            imageUrl:
-                                "https://ucarecdn.com/9a68fd1e-dfd1-47a1-85ef-b9914f625c90/Image.png",
+                            imageUrl: projectData[index].image,
                             icon: projectData[index].profileUrl);
                       }),
                 )
