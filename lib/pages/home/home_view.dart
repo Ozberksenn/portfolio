@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/pages/home/home_controller.dart';
 import '../../widgets/bottom_widget.dart';
 import '../../widgets/header_widget.dart';
@@ -10,6 +11,7 @@ class HomeView extends StatelessWidget {
   HomeView({super.key});
 
   final HomeController controller = Get.put(HomeController());
+  final AppController appController = Get.put(AppController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class HomeView extends StatelessWidget {
                     'https://ucarecdn.com/4556dc02-e7dd-4616-a725-2eb65bc9c4f2/background.png'))),
         child: Column(
           children: [
-            header(),
+            header(appController),
             Expanded(
               child: Row(
                 children: [
