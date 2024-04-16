@@ -32,7 +32,7 @@ Widget bottom() {
                     onTap: () => launchEmail(email),
                     bgColor: white,
                     imageUrl:
-                        "https://ucarecdn.com/04f495f0-fe3a-4332-992b-ff27e72e092d/68638iconscomputeriphoneemailgmailfreepnghq.png"),
+                        "https://ucarecdn.com/a029e972-dcb0-4dbd-ae11-6ae308fa7931/mail.png"),
                 paddingHorizontal16(),
                 custoumIcon(
                     onTap: () =>
@@ -47,15 +47,14 @@ Widget bottom() {
                     onTap: () => launchToUrl(
                         "https://open.spotify.com/user/212fqeawr4gidha5lelcaevnq?si=573e88c7fbff46d5"),
                     imageUrl:
-                        "https://ucarecdn.com/64a8723e-dee7-46cf-a362-f8df8e43f6f4/sptti.png",
+                        "https://ucarecdn.com/287ba6fa-9693-4f3c-9df7-0dec3aafcbb5/images.png",
                     bgColor: white),
                 paddingHorizontal16(),
                 custoumIcon(
-                  bgColor: grey,
                   onTap: () =>
                       customBottomSheet(children: [contactbottomSheet()]),
                   imageUrl:
-                      "https://ucarecdn.com/4371b260-7181-4bdd-aa7e-5b450e64f95f/iPhoneKisilerdestekapplepng.webp",
+                      "https://ucarecdn.com/88cb9f3e-0b21-47a2-85b5-c76c3241f18e/contact.png",
                 ),
               ],
             ),
