@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
 import 'package:portfolio/utils/utils.dart';
+import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
 import '../../../widgets/button_widget.dart';
@@ -85,7 +87,12 @@ Widget contactbottomSheet() {
                   textAlign: TextAlign.center,
                 ),
                 paddingVertical32(),
-                button(title: "About Me")
+                button(
+                    title: "About Me",
+                    onTap: () {
+                      Get.back();
+                      customBottomSheet(children: [aboutMeBottomSheet()]);
+                    })
               ],
             ),
           ),
