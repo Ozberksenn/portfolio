@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/pages/home/home_view.dart';
+import 'package:portfolio/routes/routes.dart';
 import 'package:portfolio/theme/theme.dart';
-
+import 'package:portfolio/utils/app_routes.dart';
+import 'pages/splash/home_controller.dart';
 import 'utils/dictionary.dart';
 
 void main() {
+  final HomeController controller = Get.put(HomeController());
+
   runApp(const MyApp());
 }
 
@@ -16,11 +19,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: 'Portfolio',
-        theme: lightTheme,
-        debugShowCheckedModeBanner: false,
-        locale: const Locale('tr'),
-        translations: Dictionary(),
-        home: HomeView());
+      title: 'Portfolio',
+      theme: lightTheme,
+      debugShowCheckedModeBanner: false,
+      getPages: routes(),
+      initialRoute: AppRoutes.splash,
+      locale: const Locale('tr'),
+      translations: Dictionary(),
+    );
   }
 }

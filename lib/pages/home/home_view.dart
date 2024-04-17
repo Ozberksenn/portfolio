@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/app_controller.dart';
-import 'package:portfolio/pages/home/home_controller.dart';
+import 'package:portfolio/pages/splash/home_controller.dart';
 import '../../utils/configuration.dart';
 import '../../widgets/bottom_widget.dart';
 import '../../widgets/header_widget.dart';
@@ -10,9 +10,9 @@ import 'widgets/weather_widgets.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
-
-  final HomeController controller = Get.put(HomeController());
   final AppController appController = Get.put(AppController());
+
+  final HomeController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
