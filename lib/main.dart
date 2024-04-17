@@ -7,8 +7,7 @@ import 'pages/splash/home_controller.dart';
 import 'utils/dictionary.dart';
 
 void main() {
-  final HomeController controller = Get.put(HomeController());
-
+  Get.put(HomeController());
   runApp(const MyApp());
 }
 

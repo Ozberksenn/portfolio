@@ -13,8 +13,11 @@ class SplashView extends StatelessWidget {
         width: Get.width,
         height: Get.height,
         color: black,
-        child: const Center(
-          child: Text('asd'),
-        ));
+        child: Center(
+            child: Image.network(
+          'https://ucarecdn.com/c168e0f9-b97e-496d-8205-000ecfde82ab/apple.png',
+          width: Get.width / 6,
+          height: Get.height / 6,
+        )));
   }
 }

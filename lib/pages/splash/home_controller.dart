@@ -2,8 +2,6 @@ import 'dart:convert' as convert;
 import 'package:geolocator_web/geolocator_web.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/services/services.dart';
-import 'package:portfolio/utils/app_routes.dart';
-
 import '../../model/weather_model.dart';
 
 class HomeController extends GetxController {
@@ -32,7 +30,7 @@ class HomeController extends GetxController {
         var jsonResponse = convert.jsonDecode(response.toString());
         weathers = WeatherModel.fromJson(jsonResponse);
         isWeather.value = true;
-        Get.toNamed(AppRoutes.home);
+        // Get.toNamed(AppRoutes.home);
       }
     } catch (e) {
       print(e);
