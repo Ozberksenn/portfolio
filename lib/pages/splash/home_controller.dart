@@ -3,6 +3,7 @@ import 'package:geolocator_web/geolocator_web.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/services/services.dart';
 import '../../model/weather_model.dart';
+import '../../utils/app_routes.dart';
 
 class HomeController extends GetxController {
   final api = ApiServices();
@@ -14,6 +15,10 @@ class HomeController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
+    init();
+  }
+
+  init() {
     fetchPosition();
   }
 
@@ -30,7 +35,7 @@ class HomeController extends GetxController {
         var jsonResponse = convert.jsonDecode(response.toString());
         weathers = WeatherModel.fromJson(jsonResponse);
         isWeather.value = true;
-        // Get.toNamed(AppRoutes.home);
+        Get.toNamed(AppRoutes.home);
       }
     } catch (e) {
       print(e);
@@ -56,8 +61,15 @@ class HomeController extends GetxController {
     if (permission == LocationPermission.deniedForever) {
       print("You denied the permisson forever");
     }
-    Position currentPosition = await geolocatorPlatform.getCurrentPosition();
-    position = currentPosition;
-    getWeather();
+    await geolocatorPlatform
+        .getCurrentPosition(
+            locationSettings:
+                const LocationSettings(accuracy: LocationAccuracy.high))
+        .then((value) {
+      position = value;
+      getWeather();
+    }).catchError((error) {
+      print(error);
+    });
   }
 }
