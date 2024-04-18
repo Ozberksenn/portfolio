@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../utils/configuration.dart';
 
@@ -10,7 +11,7 @@ Widget button({String? title, void Function()? onTap}) {
       decoration:
           BoxDecoration(color: grey, borderRadius: BorderRadius.circular(6.0)),
       child: Text(
-        title ?? "",
+        title?.tr ?? "",
         style: whiteTitleSmall,
       ),
     ),

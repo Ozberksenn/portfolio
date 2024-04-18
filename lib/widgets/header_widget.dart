@@ -38,7 +38,7 @@ Widget header(AppController appController) {
                     onPressed: () =>
                         customBottomSheet(children: [aboutMeBottomSheet()]),
                     child: Text(
-                      'About Me',
+                      'About Me'.tr,
                       style: whiteBodySmall,
                     )),
                 paddingHorizontal8(),
@@ -46,7 +46,7 @@ Widget header(AppController appController) {
                     onPressed: () =>
                         customBottomSheet(children: [contactbottomSheet()]),
                     child: Text(
-                      'Contact',
+                      'Contact'.tr,
                       style: whiteBodySmall,
                     )),
                 paddingHorizontal8(),

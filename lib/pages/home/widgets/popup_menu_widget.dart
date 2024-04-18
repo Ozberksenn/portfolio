@@ -17,7 +17,7 @@ Widget popupMenuIcon() {
         return [
           popupItem(title: "About Me"),
           popupItem(title: "Contact"),
-          popupItem(title: "Project"),
+          popupItem(title: "Projects"),
         ];
       });
 }
@@ -28,7 +28,7 @@ PopupMenuItem<dynamic> popupItem({required String title}) {
       child: SizedBox(
           width: Get.width / 2,
           child: Text(
-            title,
+            title.tr,
             style: whiteBodySmall,
           )));
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/utils/configuration.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 
@@ -26,7 +27,7 @@ Widget custoumIcon(
       iconName != null ? paddingVertical8() : const SizedBox(),
       iconName != null
           ? Text(
-              iconName,
+              iconName.tr,
               style: customIconText,
             )
           : const SizedBox()

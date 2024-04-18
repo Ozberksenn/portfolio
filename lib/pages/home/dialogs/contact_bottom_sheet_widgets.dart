@@ -45,7 +45,7 @@ Widget contactbottomSheet() {
                       style: whiteTitleLarge,
                     ),
                     subtitle: Text(
-                      "Mobile Developer",
+                      "Mobile Developer".tr,
                       style: whiteTitleSmall,
                     ),
                   ),

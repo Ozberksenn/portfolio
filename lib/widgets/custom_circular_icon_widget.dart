@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/Utils/configuration.dart';
 
 Widget customCircularIcon(
@@ -17,7 +18,7 @@ Widget customCircularIcon(
               color: white,
             )),
         Text(
-          title,
+          title.tr,
           style: whiteBodySmall,
         )
       ],

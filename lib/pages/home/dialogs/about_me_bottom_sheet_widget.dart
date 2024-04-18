@@ -34,7 +34,7 @@ Widget aboutMeBottomSheet() {
           ),
           paddingVertical32(),
           Text("Özberk Şen", style: whiteTitleLarge),
-          Text("Developer", style: whiteBodySmall),
+          Text("Developer".tr, style: whiteBodySmall),
           paddingVertical32(),
           SizedBox(
             width: Get.width / 5,
@@ -99,7 +99,7 @@ Widget aboutMeBottomSheet() {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               button(
-                  title: "My projects",
+                  title: "My Projects",
                   onTap: () {
                     Get.back();
                     customBottomSheet(children: [projectBottomSheet()]);

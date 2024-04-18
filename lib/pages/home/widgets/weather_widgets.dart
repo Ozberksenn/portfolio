@@ -33,7 +33,7 @@ Widget weather(HomeController controller) {
                   paddingVertical8(),
                   controller.weathers?.weather != null
                       ? Text(
-                          controller.weathers!.weather![0]!.main.toString(),
+                          controller.weathers!.weather![0]!.main!.tr,
                           style: whiteBodySmall,
                         )
                       : const SizedBox()

@@ -26,7 +26,7 @@ Widget projectBottomSheet() {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "My Projects",
+                  "My Projects".tr,
                   style: whiteTitleLarge,
                 ),
                 const Divider(),

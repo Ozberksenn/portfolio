@@ -50,7 +50,7 @@ Widget bottomHeader({String? title}) {
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  title ?? "",
+                  title?.tr ?? "",
                   style: whiteTitleSmall,
                 ),
               ),
