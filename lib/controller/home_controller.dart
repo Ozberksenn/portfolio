@@ -2,8 +2,9 @@ import 'dart:convert' as convert;
 import 'package:geolocator_web/geolocator_web.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/services/services.dart';
-import '../../model/weather_model.dart';
-import '../../utils/app_routes.dart';
+import 'package:portfolio/utils/utils.dart';
+import '../model/weather_model.dart';
+import '../utils/app_routes.dart';
 
 class HomeController extends GetxController {
   final api = ApiServices();
@@ -38,7 +39,7 @@ class HomeController extends GetxController {
         Get.toNamed(AppRoutes.home);
       }
     } catch (e) {
-      print(e);
+      showErrorDialog('Error', e.toString());
     }
   }
 
@@ -55,11 +56,11 @@ class HomeController extends GetxController {
     if (permission == LocationPermission.denied) {
       permission = await geolocatorPlatform.requestPermission();
       if (permission == LocationPermission.denied) {
-        print("You denied the permisson");
+        showDialog('Permisson', 'You denied the permisson');
       }
     }
     if (permission == LocationPermission.deniedForever) {
-      print("You denied the permisson forever");
+      showDialog('Permisson', 'You denied the permisson forever');
     }
     await geolocatorPlatform
         .getCurrentPosition(
@@ -69,7 +70,7 @@ class HomeController extends GetxController {
       position = value;
       getWeather();
     }).catchError((error) {
-      print(error);
+      showErrorDialog('Error', error.toString());
     });
   }
 }

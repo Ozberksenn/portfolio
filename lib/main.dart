@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:portfolio/routes/routes.dart';
 import 'package:portfolio/theme/theme.dart';
 import 'package:portfolio/utils/app_routes.dart';
-import 'pages/splash/home_controller.dart';
+import 'controller/home_controller.dart';
 import 'utils/dictionary.dart';
 
 void main() {

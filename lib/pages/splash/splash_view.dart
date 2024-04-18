@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/pages/splash/home_controller.dart';
+import 'package:portfolio/controller/home_controller.dart';
 import 'package:portfolio/utils/configuration.dart';
 
 class SplashView extends StatelessWidget {

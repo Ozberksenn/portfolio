@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/pages/splash/home_controller.dart';
+import 'package:portfolio/controller/home_controller.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../../../utils/configuration.dart';
 

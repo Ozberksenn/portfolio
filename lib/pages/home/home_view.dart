@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/app_controller.dart';
-import 'package:portfolio/pages/splash/home_controller.dart';
+import 'package:portfolio/controller/home_controller.dart';
 import '../../utils/configuration.dart';
 import '../../widgets/bottom_widget.dart';
 import '../../widgets/header_widget.dart';
