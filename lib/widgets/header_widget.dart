@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/Utils/configuration.dart';
 import 'package:portfolio/controller/app_controller.dart';
+import 'package:portfolio/controller/home_controller.dart';
 import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
 import 'package:portfolio/pages/home/dialogs/contact_bottom_sheet_widgets.dart';
 import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/pages/home/widgets/popup_menu_widget.dart';
+import 'package:portfolio/pages/home/widgets/weather_widgets.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
@@ -88,35 +90,15 @@ Widget header(AppController appController) {
   );
 }
 
-Widget mobileHeader() {
+Widget mobileHeader(HomeController controller) {
   return Container(
     height: Get.height / 4.5,
     padding: const EdgeInsets.all(18.0),
     child: Row(
       children: [
-        Expanded(
-          flex: 1,
-          child: Container(
-            decoration: BoxDecoration(
-                color: Colors.red, borderRadius: BorderRadius.circular(12.0)),
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              children: [Text('data'), Text('data'), Text('data')],
-            ),
-          ),
-        ),
+        Expanded(flex: 1, child: mobileWeatherWidget(controller)),
         paddingHorizontal16(),
-        Expanded(
-          flex: 1,
-          child: Container(
-            decoration:
-                BoxDecoration(borderRadius: BorderRadius.circular(12.0)),
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              children: [Text('data'), Text('data'), Text('data')],
-            ),
-          ),
-        ),
+        Expanded(flex: 1, child: mobileWeatherWidget(controller)),
       ],
     ),
   );

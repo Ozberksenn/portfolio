@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             ResponsiveBreakpoints.of(context).equals(MOBILE)
-                ? mobileHeader()
+                ? mobileHeader(controller)
                 : header(appController),
             Expanded(
               child: ResponsiveBreakpoints.of(context).equals(MOBILE)
