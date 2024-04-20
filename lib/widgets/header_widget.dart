@@ -87,3 +87,37 @@ Widget header(AppController appController) {
     ),
   );
 }
+
+Widget mobileHeader() {
+  return Container(
+    height: Get.height / 4.5,
+    padding: const EdgeInsets.all(18.0),
+    child: Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.red, borderRadius: BorderRadius.circular(12.0)),
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [Text('data'), Text('data'), Text('data')],
+            ),
+          ),
+        ),
+        paddingHorizontal16(),
+        Expanded(
+          flex: 1,
+          child: Container(
+            decoration:
+                BoxDecoration(borderRadius: BorderRadius.circular(12.0)),
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [Text('data'), Text('data'), Text('data')],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}

@@ -13,8 +13,8 @@ Widget custoumIcon(
       InkWell(
         onTap: onTap,
         child: Container(
-          width: 48,
-          height: 48,
+          width: 46,
+          height: 46,
           decoration: BoxDecoration(
               image: imageUrl != null
                   ? DecorationImage(

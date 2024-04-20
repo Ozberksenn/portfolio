@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/controller/home_controller.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import '../../utils/configuration.dart';
 import '../../widgets/bottom_widget.dart';
 import '../../widgets/header_widget.dart';
@@ -21,33 +22,44 @@ class HomeView extends StatelessWidget {
         height: Get.height,
         decoration: BoxDecoration(
             image: DecorationImage(
-                fit: BoxFit.cover, image: NetworkImage(backgrounImage))),
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    ResponsiveBreakpoints.of(context).equals(MOBILE)
+                        ? mobileBackgroundImage
+                        : backgrounImage))),
         child: Column(
           children: [
-            header(appController),
+            ResponsiveBreakpoints.of(context).equals(MOBILE)
+                ? mobileHeader()
+                : header(appController),
             Expanded(
-              child: Row(
-                children: [
-                  Expanded(flex: 1, child: menu()),
-                  Expanded(
-                      flex: 6,
-                      child: Container(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            weather(controller),
-                          ],
-                        ),
-                      )),
-                ],
-              ),
+              child: ResponsiveBreakpoints.of(context).equals(MOBILE)
+                  ? const SizedBox()
+                  : content(),
             ),
             bottom()
           ],
         ),
       ),
+    );
+  }
+
+  Widget content() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        menu(),
+        Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              weather(controller),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

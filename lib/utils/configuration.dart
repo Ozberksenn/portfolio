@@ -30,6 +30,8 @@ String email = "ozberksenn@gmail.com";
 String phone = "+905340526699";
 String backgrounImage =
     'https://ucarecdn.com/4556dc02-e7dd-4616-a725-2eb65bc9c4f2/background.png';
+String mobileBackgroundImage =
+    'https://ucarecdn.com/d8bd1d23-a6c4-410a-b249-32b2c31e554a/iphone.jpeg';
 
 // icons
 
