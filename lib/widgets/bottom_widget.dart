@@ -13,7 +13,7 @@ import 'custom_bottom_sheet_widget.dart';
 
 Widget bottom() {
   return ClipRRect(
-    borderRadius: BorderRadius.circular(18.0),
+    borderRadius: BorderRadius.circular(26.0),
     child: BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
       child: Row(
@@ -21,15 +21,14 @@ Widget bottom() {
         children: [
           Container(
               width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
-                  ? Get.width / 1.2
+                  ? Get.width / 1.1
                   : Get.width / 4,
               height: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
-                  ? 80
+                  ? 100
                   : 75,
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(
                   color: dark.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(18.0)),
+                  borderRadius: BorderRadius.circular(26.0)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
