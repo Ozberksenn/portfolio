@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/controller/home_controller.dart';
+import 'package:portfolio/widgets/padding_widgets.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import '../../utils/configuration.dart';
 import '../../widgets/bottom_widget.dart';
@@ -37,7 +38,12 @@ class HomeView extends StatelessWidget {
                   ? const SizedBox()
                   : content(),
             ),
-            bottom()
+            SizedBox(
+                width: ResponsiveBreakpoints.of(context).equals(MOBILE)
+                    ? Get.width / 1.2
+                    : Get.width / 4,
+                child: bottom()),
+            paddingVertical16()
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/utils/configuration.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 Widget custoumIcon(
     {String? iconName,
@@ -9,12 +10,15 @@ Widget custoumIcon(
     String? imageUrl,
     void Function()? onTap}) {
   return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
       InkWell(
         onTap: onTap,
         child: Container(
-          width: 46,
-          height: 46,
+          width:
+              ResponsiveBreakpoints.of(Get.context!).equals(DESKTOP) ? 46 : 60,
+          height:
+              ResponsiveBreakpoints.of(Get.context!).equals(DESKTOP) ? 46 : 60,
           decoration: BoxDecoration(
               image: imageUrl != null
                   ? DecorationImage(

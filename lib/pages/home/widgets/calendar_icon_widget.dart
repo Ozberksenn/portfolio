@@ -4,7 +4,7 @@ import 'package:portfolio/utils/configuration.dart';
 import 'package:portfolio/utils/utils.dart';
 
 Widget calendarIcon() {
-  return Column(children: [
+  return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
     Container(
       width: 48,
       height: 48,
