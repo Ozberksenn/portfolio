@@ -47,6 +47,7 @@ class HomeView extends StatelessWidget {
   Widget content() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         menu(),
         Container(

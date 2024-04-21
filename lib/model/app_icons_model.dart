@@ -1,6 +1,6 @@
 class AppIconsModel {
   int id;
-  bool? bottom;
+  int? bottom;
   String? name;
   String? image;
   String? url;

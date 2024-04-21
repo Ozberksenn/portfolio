@@ -72,26 +72,26 @@ List<ProjectModel> projectData = [
 List<AppIconsModel> applications = [
   AppIconsModel(
       id: 1,
-      bottom: true,
+      bottom: 1,
       name: "Email",
       image:
           "https://ucarecdn.com/a029e972-dcb0-4dbd-ae11-6ae308fa7931/mail.png",
       url: email),
   AppIconsModel(
     id: 2,
-    bottom: true,
+    bottom: 2,
     name: "Projects",
     image:
         "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png",
   ),
   AppIconsModel(
     id: 3,
-    bottom: true,
+    bottom: 1,
     name: "Calendar",
   ),
   AppIconsModel(
       id: 4,
-      bottom: true,
+      bottom: 1,
       name: "Spotify",
       image:
           "https://ucarecdn.com/287ba6fa-9693-4f3c-9df7-0dec3aafcbb5/images.png",
@@ -99,8 +99,26 @@ List<AppIconsModel> applications = [
           "https://open.spotify.com/user/212fqeawr4gidha5lelcaevnq?si=573e88c7fbff46d5"),
   AppIconsModel(
       id: 5,
-      bottom: true,
+      bottom: 1,
       name: "Contact",
       image:
           "https://ucarecdn.com/88cb9f3e-0b21-47a2-85b5-c76c3241f18e/contact.png"),
+  AppIconsModel(
+      id: 6,
+      name: "Resume",
+      url: resumeUrl,
+      image:
+          "https://ucarecdn.com/6f05fac5-7642-4b82-a4e6-eeddf0ed25aa/Adobe_Acrobat_Reader.webp"),
+  AppIconsModel(
+      id: 7,
+      name: "Github",
+      url: githubUrl,
+      image:
+          "https://ucarecdn.com/2afb6a87-55a6-4fff-b6e1-684c3e437baa/github6980894_1280.webp"),
+  AppIconsModel(
+      id: 8,
+      name: "Linkedin",
+      url: linkedinUrl,
+      image:
+          "https://ucarecdn.com/eb590850-8828-48e2-b4f6-1a20c8605195/linkedin.png"),
 ];

@@ -5,7 +5,6 @@ import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/pages/home/widgets/calendar_icon_widget.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_icon_widget.dart';
-import 'package:portfolio/widgets/padding_widgets.dart';
 import '../pages/home/dialogs/contact_bottom_sheet_widgets.dart';
 import '../utils/configuration.dart';
 import 'custom_bottom_sheet_widget.dart';
@@ -28,33 +27,43 @@ Widget bottom() {
                   color: dark.withOpacity(0.1),
                   border: Border.all(width: 0.3, color: Colors.grey),
                   borderRadius: BorderRadius.circular(18.0)),
-              child: ListView.separated(
+              child: ListView.builder(
                   itemCount: applications.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  separatorBuilder: (context, index) {
-                    return paddingHorizontal16();
-                  },
                   itemBuilder: (context, index) {
-                    return applications[index].name == "Calendar"
-                        ? calendarIcon()
-                        : custoumIcon(
-                            imageUrl: applications[index].image,
-                            onTap: () {
-                              if (applications[index].name == "Email") {
-                                launchEmail(applications[index].url.toString());
-                              } else if (applications[index].name ==
-                                  "Projects") {
-                                customBottomSheet(
-                                    children: [projectBottomSheet()]);
-                              } else if (applications[index].name ==
-                                  "Contact") {
-                                customBottomSheet(
-                                    children: [contactbottomSheet()]);
-                              } else {
-                                launchToUrl(applications[index].url.toString());
-                              }
-                            });
+                    return applications[index].bottom == 1 ||
+                            applications[index].bottom == 2
+                        ? applications[index].name == "Calendar"
+                            ? Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: calendarIcon(),
+                              )
+                            : Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: custoumIcon(
+                                    imageUrl: applications[index].image,
+                                    onTap: () {
+                                      if (applications[index].name == "Email") {
+                                        launchEmail(
+                                            applications[index].url.toString());
+                                      } else if (applications[index].name ==
+                                          "Projects") {
+                                        customBottomSheet(
+                                            children: [projectBottomSheet()]);
+                                      } else if (applications[index].name ==
+                                          "Contact") {
+                                        customBottomSheet(
+                                            children: [contactbottomSheet()]);
+                                      } else {
+                                        launchToUrl(
+                                            applications[index].url.toString());
+                                      }
+                                    }),
+                              )
+                        : const SizedBox();
                   })),
         ),
       ),
