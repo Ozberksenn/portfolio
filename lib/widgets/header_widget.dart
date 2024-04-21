@@ -92,7 +92,7 @@ Widget header(AppController appController) {
 
 Widget mobileHeader(HomeController controller) {
   return Container(
-    height: Get.height / 4.5,
+    height: Get.height / 4.2,
     padding: const EdgeInsets.all(18.0),
     child: Row(
       children: [

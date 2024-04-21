@@ -91,7 +91,7 @@ List<AppIconsModel> applications = [
   ),
   AppIconsModel(
       id: 4,
-      bottom: 1,
+      bottom: 2,
       name: "Spotify",
       image:
           "https://ucarecdn.com/287ba6fa-9693-4f3c-9df7-0dec3aafcbb5/images.png",
