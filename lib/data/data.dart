@@ -1,4 +1,6 @@
+import 'package:portfolio/model/app_icons_model.dart';
 import 'package:portfolio/model/project_model.dart';
+import 'package:portfolio/utils/configuration.dart';
 
 List<dynamic> skill = [
   ["Flutter", "React Native", "Swift"],
@@ -65,4 +67,40 @@ List<ProjectModel> projectData = [
       routeUrl: "https://github.com/Ozberksenn/survey_nodejs",
       image:
           "https://ucarecdn.com/36111da8-bef3-4153-9f8e-c02af148ab52/9DifferentTypesofSurveyMethods2x8.png"),
+];
+
+List<AppIconsModel> applications = [
+  AppIconsModel(
+      id: 1,
+      bottom: true,
+      name: "Email",
+      image:
+          "https://ucarecdn.com/a029e972-dcb0-4dbd-ae11-6ae308fa7931/mail.png",
+      url: email),
+  AppIconsModel(
+    id: 2,
+    bottom: true,
+    name: "Projects",
+    image:
+        "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png",
+  ),
+  AppIconsModel(
+    id: 3,
+    bottom: true,
+    name: "Calendar",
+  ),
+  AppIconsModel(
+      id: 4,
+      bottom: true,
+      name: "Spotify",
+      image:
+          "https://ucarecdn.com/287ba6fa-9693-4f3c-9df7-0dec3aafcbb5/images.png",
+      url:
+          "https://open.spotify.com/user/212fqeawr4gidha5lelcaevnq?si=573e88c7fbff46d5"),
+  AppIconsModel(
+      id: 5,
+      bottom: true,
+      name: "Contact",
+      image:
+          "https://ucarecdn.com/88cb9f3e-0b21-47a2-85b5-c76c3241f18e/contact.png"),
 ];

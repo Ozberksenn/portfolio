@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:portfolio/data/data.dart';
 import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/pages/home/widgets/calendar_icon_widget.dart';
 import 'package:portfolio/utils/utils.dart';
@@ -13,52 +13,49 @@ import 'custom_bottom_sheet_widget.dart';
 Widget bottom() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       ClipRRect(
         borderRadius: BorderRadius.circular(18.0),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
           child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 8.0),
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8.0),
-            decoration: BoxDecoration(
-                color: dark.withOpacity(0.1),
-                border: Border.all(width: 0.3, color: Colors.grey),
-                borderRadius: BorderRadius.circular(18.0)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                custoumIcon(
-                    onTap: () => launchEmail(email),
-                    bgColor: white,
-                    imageUrl:
-                        "https://ucarecdn.com/a029e972-dcb0-4dbd-ae11-6ae308fa7931/mail.png"),
-                paddingHorizontal16(),
-                custoumIcon(
-                    onTap: () =>
-                        customBottomSheet(children: [projectBottomSheet()]),
-                    imageUrl:
-                        "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png",
-                    bgColor: white),
-                paddingHorizontal16(),
-                calendarIcon(),
-                paddingHorizontal16(),
-                custoumIcon(
-                    onTap: () => launchToUrl(
-                        "https://open.spotify.com/user/212fqeawr4gidha5lelcaevnq?si=573e88c7fbff46d5"),
-                    imageUrl:
-                        "https://ucarecdn.com/287ba6fa-9693-4f3c-9df7-0dec3aafcbb5/images.png",
-                    bgColor: white),
-                paddingHorizontal16(),
-                custoumIcon(
-                  onTap: () =>
-                      customBottomSheet(children: [contactbottomSheet()]),
-                  imageUrl:
-                      "https://ucarecdn.com/88cb9f3e-0b21-47a2-85b5-c76c3241f18e/contact.png",
-                ),
-              ],
-            ),
-          ),
+              height: 75,
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12, horizontal: 8.0),
+              decoration: BoxDecoration(
+                  color: dark.withOpacity(0.1),
+                  border: Border.all(width: 0.3, color: Colors.grey),
+                  borderRadius: BorderRadius.circular(18.0)),
+              child: ListView.separated(
+                  itemCount: applications.length,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) {
+                    return paddingHorizontal16();
+                  },
+                  itemBuilder: (context, index) {
+                    return applications[index].name == "Calendar"
+                        ? calendarIcon()
+                        : custoumIcon(
+                            imageUrl: applications[index].image,
+                            onTap: () {
+                              if (applications[index].name == "Email") {
+                                launchEmail(applications[index].url.toString());
+                              } else if (applications[index].name ==
+                                  "Projects") {
+                                customBottomSheet(
+                                    children: [projectBottomSheet()]);
+                              } else if (applications[index].name ==
+                                  "Contact") {
+                                customBottomSheet(
+                                    children: [contactbottomSheet()]);
+                              } else {
+                                launchToUrl(applications[index].url.toString());
+                              }
+                            });
+                  })),
         ),
       ),
     ],
