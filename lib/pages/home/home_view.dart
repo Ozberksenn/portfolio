@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/controller/home_controller.dart';
+import 'package:portfolio/data/data.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import '../../utils/configuration.dart';
+import '../../utils/utils.dart';
 import '../../widgets/bottom_widget.dart';
+import '../../widgets/custom_icon_widget.dart';
 import '../../widgets/header_widget.dart';
 import '../../widgets/menu_widget.dart';
 import 'widgets/weather_widgets.dart';
@@ -35,18 +38,39 @@ class HomeView extends StatelessWidget {
                 : header(appController),
             Expanded(
               child: ResponsiveBreakpoints.of(context).equals(MOBILE)
-                  ? const SizedBox()
+                  ? mobileContent()
                   : content(),
             ),
             SizedBox(
                 width: ResponsiveBreakpoints.of(context).equals(MOBILE)
                     ? Get.width / 1.1
-                    : Get.width / 4,
+                    : Get.width / 3.6,
                 child: bottom()),
             paddingVertical16()
           ],
         ),
       ),
+    );
+  }
+
+  // todo ! contenti widgeta al.
+
+  Widget mobileContent() {
+    return SizedBox(
+      width: Get.width / 1.1,
+      child: Wrap(
+          alignment: WrapAlignment.start,
+          children: applications.map((e) {
+            return e.bottom != 1
+                ? Padding(
+                    padding: const EdgeInsets.only(right: 22.0, top: 12.0),
+                    child: custoumIcon(
+                        iconName: e.name,
+                        imageUrl: e.image,
+                        onTap: () => launchToUrl(e.url)),
+                  )
+                : const SizedBox();
+          }).toList()),
     );
   }
 

@@ -22,7 +22,7 @@ Widget bottom() {
           Container(
               width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
                   ? Get.width / 1.1
-                  : Get.width / 4,
+                  : Get.width / 3.6,
               height: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
                   ? 100
                   : 75,
@@ -45,7 +45,7 @@ Widget bottom() {
                               : const SizedBox()
                           : Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                                  const EdgeInsets.symmetric(horizontal: 12.0),
                               child: custoumIcon(
                                   imageUrl: e.image,
                                   onTap: () {
@@ -64,49 +64,7 @@ Widget bottom() {
                             )
                       : const SizedBox();
                 }).toList(),
-              )
-
-              //  ListView.builder(
-              //     itemCount: applications.length,
-              //     shrinkWrap: true,
-              //     scrollDirection: Axis.horizontal,
-              //     itemBuilder: (context, index) {
-              // return applications[index].bottom == 1 ||
-              //         applications[index].bottom == 2
-              //     ? applications[index].name == "Calendar"
-              //         ? ResponsiveBreakpoints.of(context).equals(DESKTOP)
-              //             ? Padding(
-              //                 padding:
-              //                     const EdgeInsets.symmetric(horizontal: 8.0),
-              //                 child: calendarIcon(),
-              //               )
-              //             : const SizedBox()
-              //         : Padding(
-              //             padding:
-              //                 const EdgeInsets.symmetric(horizontal: 8.0),
-              //             child: custoumIcon(
-              //                 imageUrl: applications[index].image,
-              //                 onTap: () {
-              //                   if (applications[index].name == "Email") {
-              //                     launchEmail(
-              //                         applications[index].url.toString());
-              //                   } else if (applications[index].name ==
-              //                       "Projects") {
-              //                     customBottomSheet(
-              //                         children: [projectBottomSheet()]);
-              //                   } else if (applications[index].name ==
-              //                       "Contact") {
-              //                     customBottomSheet(
-              //                         children: [contactbottomSheet()]);
-              //                   } else {
-              //                     launchToUrl(
-              //                         applications[index].url.toString());
-              //                   }
-              //                 }),
-              //           )
-              //     : const SizedBox();
-              //     })
-              ),
+              )),
         ],
       ),
     ),
