@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/home_controller.dart';
-
+import 'package:portfolio/model/app_icons_model.dart';
 import '../../../data/data.dart';
 import '../../../utils/utils.dart';
 import '../../../widgets/custom_bottom_sheet_widget.dart';
@@ -11,28 +11,38 @@ import '../dialogs/project_bottom_sheet_widget.dart';
 import 'weather_widgets.dart';
 
 Widget mobileContent() {
+  List<AppIconsModel> mobileContentMenu = [];
+  for (var i in applications) {
+    if (i.bottom != 1) {
+      mobileContentMenu.add(i);
+    }
+  }
   return SizedBox(
-    width: Get.width / 1.1,
-    child: Wrap(
-        alignment: WrapAlignment.spaceBetween,
-        children: applications.map((e) {
-          return e.bottom != 1
-              ? Padding(
-                  padding: const EdgeInsets.only(top: 12.0),
-                  child: custoumIcon(
-                      iconName: e.name,
-                      imageUrl: e.image,
-                      onTap: () {
-                        if (e.name == 'Projects') {
-                          customBottomSheet(children: [projectBottomSheet()]);
-                        } else {
-                          launchToUrl(e.url);
-                        }
-                      }),
-                )
-              : const SizedBox();
-        }).toList()),
-  );
+      width: Get.width / 1.1,
+      child: GridView.builder(
+          itemCount: mobileContentMenu.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4),
+          itemBuilder: (context, index) {
+            return mobileContentMenu[index].bottom != 1
+                ? Padding(
+                    padding: const EdgeInsets.only(top: 12.0),
+                    child: custoumIcon(
+                        iconName: mobileContentMenu[index].name,
+                        imageUrl: mobileContentMenu[index].image,
+                        onTap: () {
+                          if (mobileContentMenu[index].name == 'Projects') {
+                            customBottomSheet(children: [projectBottomSheet()]);
+                          } else if (mobileContentMenu[index].name ==
+                              'Language') {
+                            print('change language');
+                          } else {
+                            launchToUrl(mobileContentMenu[index].url);
+                          }
+                        }),
+                  )
+                : const SizedBox();
+          }));
 }
 
 Widget content(HomeController controller) {

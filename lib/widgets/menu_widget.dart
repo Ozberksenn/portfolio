@@ -5,7 +5,7 @@ import 'custom_icon_widget.dart';
 
 Widget menu() {
   return Container(
-      width: 80,
+      width: 100,
       padding: const EdgeInsets.all(16.0),
       child: ListView.builder(
           shrinkWrap: true,
@@ -18,7 +18,13 @@ Widget menu() {
                     child: custoumIcon(
                         iconName: applications[index].name,
                         imageUrl: applications[index].image,
-                        onTap: () => launchToUrl(applications[index].url)),
+                        onTap: () {
+                          if (applications[index].name == 'Language') {
+                            print('change language');
+                          } else {
+                            launchToUrl(applications[index].url);
+                          }
+                        }),
                   )
                 : const SizedBox();
           }));

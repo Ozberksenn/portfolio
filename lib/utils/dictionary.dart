@@ -18,7 +18,8 @@ class Dictionary extends Translations {
       'Developer': 'Geliştirici',
       'Clouds': 'Soğuk',
       'Clear': 'Açık',
-      'Rain': 'Yağmurlu'
+      'Rain': 'Yağmurlu',
+      'Language': 'Dil'
     }
   };
 

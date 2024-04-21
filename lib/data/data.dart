@@ -121,4 +121,9 @@ List<AppIconsModel> applications = [
       url: linkedinUrl,
       image:
           "https://ucarecdn.com/eb590850-8828-48e2-b4f6-1a20c8605195/linkedin.png"),
+  AppIconsModel(
+      id: 9,
+      name: "Language",
+      image:
+          "https://ucarecdn.com/daafe2f6-c509-4389-a52f-0643e49d69cd/iconsvg.png"),
 ];
