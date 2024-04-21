@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/data/data.dart';
 import 'package:portfolio/utils/utils.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import '../../../utils/configuration.dart';
 import '../widgets/project_card_widget.dart';
 import 'bottom_sheet_header_widget.dart';
@@ -33,9 +34,16 @@ Widget projectBottomSheet() {
                 SizedBox(
                   height: Get.height / 1.6,
                   child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              childAspectRatio: 2, crossAxisCount: 2),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          childAspectRatio:
+                              ResponsiveBreakpoints.of(Get.context!)
+                                      .equals(MOBILE)
+                                  ? 1
+                                  : 2,
+                          crossAxisCount: ResponsiveBreakpoints.of(Get.context!)
+                                  .equals(MOBILE)
+                              ? 1
+                              : 2),
                       itemCount: projectData.length,
                       itemBuilder: (context, index) {
                         return projectCard(
