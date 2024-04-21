@@ -51,11 +51,30 @@ Future<void> launchPhone(String url) async {
   }
 }
 
+//EMAIL
 Future<void> launchEmail(String url) async {
   if (await canLaunchUrl(Uri(scheme: 'mailto', path: url))) {
     await launchUrl(Uri(scheme: 'mailto', path: url));
   } else {
     showErrorDialog('Error', 'Error email!');
+  }
+}
+
+// MAP
+launchMap() async {
+  String lat = "40.188526";
+  String long = "29.060965";
+
+  final String googleMapslocationUrl =
+      "https://www.google.com/maps/search/?api=1&query=${lat},${long}";
+
+  final String encodedURl = Uri.encodeFull(googleMapslocationUrl);
+
+  if (await canLaunch(encodedURl)) {
+    await launch(encodedURl);
+  } else {
+    print('Could not launch $encodedURl');
+    throw 'Could not launch $encodedURl';
   }
 }
 
