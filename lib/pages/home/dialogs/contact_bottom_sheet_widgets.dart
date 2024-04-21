@@ -5,6 +5,7 @@ import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import '../../../utils/configuration.dart';
 import '../../../widgets/button_widget.dart';
 import '../../../widgets/custom_circular_icon_widget.dart';
@@ -14,7 +15,9 @@ Widget contactbottomSheet() {
   return Material(
     borderRadius: BorderRadius.circular(8.0),
     child: Container(
-      width: Get.width / 3.4,
+      width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+          ? Get.width / 1.2
+          : 3.4,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -29,7 +32,9 @@ Widget contactbottomSheet() {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: Get.width / 6,
+                  width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+                      ? Get.width / 1.6
+                      : Get.width / 6,
                   child: ListTile(
                     leading: Container(
                       width: 60,
@@ -52,7 +57,9 @@ Widget contactbottomSheet() {
                 ),
                 paddingVertical16(),
                 SizedBox(
-                  width: Get.width / 6,
+                  width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+                      ? Get.width / 1.6
+                      : Get.width / 6,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

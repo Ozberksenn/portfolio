@@ -39,7 +39,7 @@ class HomeController extends GetxController {
         Get.toNamed(AppRoutes.home);
       }
     } catch (e) {
-      showErrorDialog('Error', e.toString());
+      showDialog('Error', e.toString());
     }
   }
 
@@ -70,7 +70,7 @@ class HomeController extends GetxController {
       position = value;
       getWeather();
     }).catchError((error) {
-      showErrorDialog('Error', error.toString());
+      showDialog('Error', error.toString());
     });
   }
 }

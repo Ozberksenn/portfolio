@@ -6,6 +6,7 @@ import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/button_widget.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import '../../../utils/configuration.dart';
 import 'bottom_sheet_header_widget.dart';
 
@@ -13,7 +14,9 @@ Widget aboutMeBottomSheet() {
   return Material(
     borderRadius: BorderRadius.circular(8.0),
     child: Container(
-      width: Get.width / 3.8,
+      width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+          ? Get.width / 1.2
+          : Get.width / 3.8,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -37,7 +40,9 @@ Widget aboutMeBottomSheet() {
           Text("Developer".tr, style: whiteBodySmall),
           paddingVertical32(),
           SizedBox(
-            width: Get.width / 5,
+            width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+                ? Get.width
+                : Get.width / 5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -62,7 +67,9 @@ Widget aboutMeBottomSheet() {
           ),
           paddingVertical32(),
           SizedBox(
-            width: Get.width / 5,
+            width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+                ? Get.width
+                : Get.width / 5,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

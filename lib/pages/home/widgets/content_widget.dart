@@ -4,8 +4,10 @@ import 'package:portfolio/controller/home_controller.dart';
 
 import '../../../data/data.dart';
 import '../../../utils/utils.dart';
+import '../../../widgets/custom_bottom_sheet_widget.dart';
 import '../../../widgets/custom_icon_widget.dart';
 import '../../../widgets/menu_widget.dart';
+import '../dialogs/project_bottom_sheet_widget.dart';
 import 'weather_widgets.dart';
 
 Widget mobileContent() {
@@ -20,7 +22,13 @@ Widget mobileContent() {
                   child: custoumIcon(
                       iconName: e.name,
                       imageUrl: e.image,
-                      onTap: () => launchToUrl(e.url)),
+                      onTap: () {
+                        if (e.name == 'Projects') {
+                          customBottomSheet(children: [projectBottomSheet()]);
+                        } else {
+                          launchToUrl(e.url);
+                        }
+                      }),
                 )
               : const SizedBox();
         }).toList()),
