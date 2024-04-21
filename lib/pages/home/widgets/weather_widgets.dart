@@ -65,32 +65,49 @@ Widget mobileWeatherWidget(HomeController controller) {
             color: white.withOpacity(0.2),
             borderRadius: BorderRadius.circular(12.0)),
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              controller.weathers?.name ?? "",
-              style: whiteTitleSmall,
-            ),
-            controller.weathers?.main != null
-                ? Text("${controller.weathers!.main!.temp!.round()} ° ",
-                    style: whiteheadlineSmall)
-                : const SizedBox(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                controller.weathers?.weather != null
-                    ? Text(
-                        controller.weathers!.weather![0]!.main!.tr,
-                        style: whiteBodySmall,
-                      )
-                    : const SizedBox(),
-                weatherConditions(controller.weathers!.weather![0]!.main),
-              ],
-            )
-          ],
-        ),
+        child: Obx(() => controller.isWeather.value != false
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    controller.weathers?.name ?? "",
+                    style: whiteTitleSmall,
+                  ),
+                  controller.weathers?.main != null
+                      ? Text("${controller.weathers?.main?.temp?.round()} ° ",
+                          style: whiteheadlineSmall)
+                      : const SizedBox(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      controller.weathers?.weather != null
+                          ? Text(
+                              controller.weathers!.weather?[0]?.main?.tr ?? "",
+                              style: whiteBodySmall,
+                            )
+                          : const SizedBox(),
+                      weatherConditions(controller.weathers?.weather?[0]?.main),
+                    ],
+                  )
+                ],
+              )
+            : SizedBox(
+                child: Column(
+                  children: [
+                    Icon(
+                      CupertinoIcons.exclamationmark,
+                      color: white,
+                    ),
+                    paddingVertical8(),
+                    Text(
+                      "unavailable weather info",
+                      style: whiteTitleSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              )),
       ),
     ),
   );
@@ -114,5 +131,6 @@ weatherConditions(weather) {
         color: white,
       );
     default:
+      return const SizedBox();
   }
 }

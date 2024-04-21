@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/Utils/configuration.dart';
@@ -13,6 +12,7 @@ import 'package:portfolio/pages/home/widgets/weather_widgets.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
+import '../pages/home/widgets/map_image_widget.dart';
 
 Widget header(AppController appController) {
   return ClipRRect(
@@ -98,7 +98,7 @@ Widget mobileHeader(HomeController controller) {
       children: [
         Expanded(flex: 1, child: mobileWeatherWidget(controller)),
         paddingHorizontal16(),
-        Expanded(flex: 1, child: mobileWeatherWidget(controller)),
+        Expanded(flex: 1, child: mapImage()),
       ],
     ),
   );

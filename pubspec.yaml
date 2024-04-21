@@ -40,6 +40,7 @@ dependencies:
   geolocator_web: ^3.0.0
   url_launcher: ^6.2.6
   responsive_framework: ^1.4.0
+  flutter_map: ^6.1.0
 
 dev_dependencies:
   flutter_test:
