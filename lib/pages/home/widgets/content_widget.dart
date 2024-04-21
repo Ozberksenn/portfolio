@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/controller/home_controller.dart';
 import 'package:portfolio/model/app_icons_model.dart';
 import '../../../data/data.dart';
@@ -10,7 +11,27 @@ import '../../../widgets/menu_widget.dart';
 import '../dialogs/project_bottom_sheet_widget.dart';
 import 'weather_widgets.dart';
 
-Widget mobileContent() {
+Widget content(HomeController controller) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      menu(),
+      Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            weather(controller),
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+Widget mobileContent(AppController appController) {
   List<AppIconsModel> mobileContentMenu = [];
   for (var i in applications) {
     if (i.bottom != 1) {
@@ -35,7 +56,7 @@ Widget mobileContent() {
                             customBottomSheet(children: [projectBottomSheet()]);
                           } else if (mobileContentMenu[index].name ==
                               'Language') {
-                            print('change language');
+                            appController.changeLanguage();
                           } else {
                             launchToUrl(mobileContentMenu[index].url);
                           }
@@ -43,24 +64,4 @@ Widget mobileContent() {
                   )
                 : const SizedBox();
           }));
-}
-
-Widget content(HomeController controller) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      menu(),
-      Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            weather(controller),
-          ],
-        ),
-      ),
-    ],
-  );
 }

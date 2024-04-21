@@ -12,7 +12,6 @@ import 'widgets/content_widget.dart';
 class HomeView extends StatelessWidget {
   HomeView({super.key});
   final AppController appController = Get.put(AppController());
-
   final HomeController controller = Get.find();
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class HomeView extends StatelessWidget {
                 : header(appController),
             Expanded(
               child: ResponsiveBreakpoints.of(context).equals(MOBILE)
-                  ? mobileContent()
+                  ? mobileContent(appController)
                   : content(controller),
             ),
             SizedBox(

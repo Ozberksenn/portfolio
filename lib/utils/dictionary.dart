@@ -19,7 +19,9 @@ class Dictionary extends Translations {
       'Clouds': 'Soğuk',
       'Clear': 'Açık',
       'Rain': 'Yağmurlu',
-      'Language': 'Dil'
+      'Language': 'Dil',
+      'Weather': 'Hava Durumu',
+      'Map': 'Konum'
     }
   };
 

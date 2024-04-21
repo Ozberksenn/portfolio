@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/data/data.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'custom_icon_widget.dart';
 
 Widget menu() {
+  final AppController appController = Get.find();
   return Container(
       width: 100,
       padding: const EdgeInsets.all(16.0),
@@ -20,7 +23,7 @@ Widget menu() {
                         imageUrl: applications[index].image,
                         onTap: () {
                           if (applications[index].name == 'Language') {
-                            print('change language');
+                            appController.changeLanguage();
                           } else {
                             launchToUrl(applications[index].url);
                           }
