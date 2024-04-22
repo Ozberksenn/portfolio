@@ -31,7 +31,7 @@ Widget content(HomeController controller) {
   );
 }
 
-Widget mobileContent(AppController appController) {
+Widget mobileContent(AppController appController, lang) {
   List<AppIconsModel> mobileContentMenu = [];
   for (var i in applications) {
     if (i.bottom != 1) {
@@ -56,7 +56,7 @@ Widget mobileContent(AppController appController) {
                             customBottomSheet(children: [projectBottomSheet()]);
                           } else if (mobileContentMenu[index].name ==
                               'Language') {
-                            appController.changeLanguage();
+                            appController.changeLanguage(lang);
                           } else {
                             launchToUrl(mobileContentMenu[index].url);
                           }

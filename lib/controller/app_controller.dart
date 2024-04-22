@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class AppController extends GetxController {
-  RxString selectLanguage = 'tr'.obs;
+  final box = GetStorage();
 
-  void changeLanguage() {
-    if (selectLanguage.value == 'tr') {
-      selectLanguage.value = 'en';
-      Get.updateLocale(Locale(selectLanguage.value));
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    box.write('lang', 'en');
+  }
+
+  void changeLanguage(lang) {
+    if (lang == 'en') {
+      Get.updateLocale(const Locale('en'));
+      box.write('lang', 'tr');
     } else {
-      selectLanguage.value = 'tr';
-      Get.updateLocale(Locale(selectLanguage.value));
+      Get.updateLocale(const Locale('tr'));
+      box.write('lang', 'en');
     }
   }
 }

@@ -14,7 +14,7 @@ import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
 import '../pages/home/widgets/map_image_widget.dart';
 
-Widget header(AppController appController) {
+Widget header(AppController appController, lang) {
   return ClipRRect(
     child: BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -69,9 +69,9 @@ Widget header(AppController appController) {
                     margin: const EdgeInsets.symmetric(horizontal: 12.0),
                     padding: const EdgeInsets.symmetric(horizontal: 6.0),
                     child: InkWell(
-                      onTap: () => appController.changeLanguage(),
+                      onTap: () => appController.changeLanguage(lang),
                       child: Text(
-                        appController.selectLanguage.value.toUpperCase(),
+                        lang.toString().toUpperCase(),
                         style: Get.textTheme.titleSmall,
                       ),
                     )),
