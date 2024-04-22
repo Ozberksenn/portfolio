@@ -73,13 +73,12 @@ launchMap() async {
   if (await canLaunch(encodedURl)) {
     await launch(encodedURl);
   } else {
-    print('Could not launch $encodedURl');
     throw 'Could not launch $encodedURl';
   }
 }
 
 showDialog(String? title, String? message) {
-  Timer(const Duration(seconds: 7), () {
+  Timer(const Duration(seconds: 4), () {
     Get.back();
   });
   Get.dialog(

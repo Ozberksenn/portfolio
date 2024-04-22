@@ -17,7 +17,7 @@ Widget contactbottomSheet() {
     child: Container(
       width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
           ? Get.width / 1.2
-          : 3.4,
+          : Get.width / 3.6,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,

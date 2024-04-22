@@ -37,7 +37,7 @@ class HomeController extends GetxController {
         var jsonResponse = convert.jsonDecode(response.toString());
         weathers = WeatherModel.fromJson(jsonResponse);
         isWeather.value = true;
-        Get.toNamed(AppRoutes.home);
+        Get.offAllNamed(AppRoutes.home);
         showDialog('Did you know ?',
             'This portfolio will also look great on ${ResponsiveBreakpoints.of(Get.context!).equals(MOBILE) ? 'web' : 'mobile'}');
       }
@@ -59,11 +59,13 @@ class HomeController extends GetxController {
     if (permission == LocationPermission.denied) {
       permission = await geolocatorPlatform.requestPermission();
       if (permission == LocationPermission.denied) {
-        showDialog('Permisson', 'You denied the permisson');
+        showDialog('Location Permisson', 'You denied the permisson');
+        Get.offAllNamed(AppRoutes.home);
       }
     }
     if (permission == LocationPermission.deniedForever) {
-      showDialog('Permisson', 'You denied the permisson forever');
+      showDialog('Location Permisson', 'You denied the permisson forever');
+      Get.offAllNamed(AppRoutes.home);
     }
     await geolocatorPlatform
         .getCurrentPosition(
