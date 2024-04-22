@@ -21,7 +21,10 @@ class Dictionary extends Translations {
       'Rain': 'Yağmurlu',
       'Language': 'Dil',
       'Weather': 'Hava Durumu',
-      'Map': 'Konum'
+      'Map': 'Konum',
+      'Did you know ?': 'Biliyor musun ?',
+      'This portfolio will also look great on web':
+          'Bu portföy web de harika görünecek'
     }
   };
 

@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:portfolio/utils/configuration.dart';
+import 'package:portfolio/widgets/padding_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String formatDate(DateTime? value) {
@@ -77,11 +79,15 @@ launchMap() async {
 }
 
 showDialog(String? title, String? message) {
+  Timer(const Duration(seconds: 7), () {
+    Get.back();
+  });
   Get.dialog(
       barrierColor: Colors.transparent,
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          paddingVertical32(),
           ClipRect(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),

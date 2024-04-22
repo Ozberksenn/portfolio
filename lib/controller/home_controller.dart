@@ -3,6 +3,7 @@ import 'package:geolocator_web/geolocator_web.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/services/services.dart';
 import 'package:portfolio/utils/utils.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import '../model/weather_model.dart';
 import '../utils/app_routes.dart';
 
@@ -37,6 +38,8 @@ class HomeController extends GetxController {
         weathers = WeatherModel.fromJson(jsonResponse);
         isWeather.value = true;
         Get.toNamed(AppRoutes.home);
+        showDialog('Did you know ?',
+            'This portfolio will also look great on ${ResponsiveBreakpoints.of(Get.context!).equals(MOBILE) ? 'web' : 'mobile'}');
       }
     } catch (e) {
       showDialog('Error', e.toString());
