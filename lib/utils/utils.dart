@@ -36,9 +36,7 @@ Future<void> launchToUrl(String? url) async {
     return;
   }
 
-  if (!await launchUrl(Uri.parse(url))) {
-    showDialog("Launch Url Error", "Could not launch $url");
-  }
+  if (!await launchUrl(Uri.parse(url))) {}
 }
 
 // PHONE
