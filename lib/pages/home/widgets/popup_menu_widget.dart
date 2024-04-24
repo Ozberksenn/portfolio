@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/pages/home/dialogs/about_me_bottom_sheet_widget.dart';
+import 'package:portfolio/pages/home/dialogs/contact_bottom_sheet_widgets.dart';
+import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/utils/configuration.dart';
+import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 
 Widget popupMenuIcon() {
   return PopupMenuButton(
@@ -15,15 +19,23 @@ Widget popupMenuIcon() {
       ),
       itemBuilder: (BuildContext btn) {
         return [
-          popupItem(title: "About Me"),
-          popupItem(title: "Contact"),
-          popupItem(title: "Projects"),
+          popupItem(
+              title: "About Me",
+              onTap: () => customBottomSheet(children: [aboutMeBottomSheet()])),
+          popupItem(
+              title: "Contact",
+              onTap: () => customBottomSheet(children: [contactbottomSheet()])),
+          popupItem(
+              title: "Projects",
+              onTap: () => customBottomSheet(children: [projectBottomSheet()])),
         ];
       });
 }
 
-PopupMenuItem<dynamic> popupItem({required String title}) {
+PopupMenuItem<dynamic> popupItem(
+    {required String title, void Function()? onTap}) {
   return PopupMenuItem(
+      onTap: onTap,
       height: 30,
       child: SizedBox(
           width: Get.width / 2,

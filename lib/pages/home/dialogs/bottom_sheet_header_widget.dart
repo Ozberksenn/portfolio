@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/configuration.dart';
 import '../../../widgets/padding_widgets.dart';
 
@@ -21,7 +20,7 @@ Widget bottomHeader({String? title}) {
               child: SizedBox(
                 child: Row(
                   children: [
-                    GestureDetector(
+                    InkWell(
                       onTap: () => Get.back(),
                       child: const Icon(
                         CupertinoIcons.xmark_circle_fill,
