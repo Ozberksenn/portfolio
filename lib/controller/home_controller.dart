@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert' as convert;
 import 'package:geolocator_web/geolocator_web.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,9 @@ class HomeController extends GetxController {
   }
 
   init() {
-    fetchPosition();
+    Timer(const Duration(seconds: 1), () {
+      fetchPosition();
+    });
   }
 
   getWeather() async {
