@@ -27,15 +27,15 @@ Widget aboutMeBottomSheet() {
           bottomHeader(title: "About Me"),
           paddingVertical16(),
           Container(
-            width: 60,
-            height: 60,
+            width: 100,
+            height: 100,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
                     image: NetworkImage(
-                        "https://avatars.githubusercontent.com/u/96706849?v=4"))),
+                        "https://ucarecdn.com/f3e7823b-5e1b-4335-b00c-c5677977bf9e/me.png"))),
           ),
-          paddingVertical32(),
+          paddingVertical16(),
           Text("Özberk Şen", style: whiteTitleLarge),
           Text("Developer".tr, style: whiteBodySmall),
           paddingVertical32(),

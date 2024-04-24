@@ -34,16 +34,17 @@ Widget contactbottomSheet() {
                 SizedBox(
                   width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
                       ? Get.width / 1.6
-                      : Get.width / 6,
+                      : Get.width / 5,
                   child: ListTile(
                     leading: Container(
-                      width: 60,
-                      height: 60,
+                      width: 100,
+                      height: 100,
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
+                              fit: BoxFit.contain,
                               image: NetworkImage(
-                                  "https://avatars.githubusercontent.com/u/96706849?v=4"))),
+                                  "https://ucarecdn.com/f3e7823b-5e1b-4335-b00c-c5677977bf9e/me.png"))),
                     ),
                     title: Text(
                       "Özberk Şen",
