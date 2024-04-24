@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:portfolio/pages/home/dialogs/project_bottom_sheet_widget.dart';
 import 'package:portfolio/utils/utils.dart';
+import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'custom_icon_widget.dart';
 
 Widget menu() {
@@ -27,6 +29,8 @@ Widget menu() {
                           String lang = box.read('lang');
                           if (applications[index].name == 'Language') {
                             appController.changeLanguage(lang);
+                          } else if (applications[index].name == 'Projects') {
+                            customBottomSheet(children: [projectBottomSheet()]);
                           } else {
                             launchToUrl(applications[index].url);
                           }
