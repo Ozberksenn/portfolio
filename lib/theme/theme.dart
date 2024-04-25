@@ -9,6 +9,7 @@ class AppTheme {
 ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     dividerColor: greyBorder,
+    fontFamily: 'OpenSans-Regular',
     dividerTheme: const DividerThemeData(color: Colors.grey, thickness: 0.2));
 
 ThemeData darkTheme = lightTheme;
