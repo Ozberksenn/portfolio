@@ -31,7 +31,7 @@ Widget loading() {
               backgroundColor: white,
               minHeight: 2,
               color: black.withOpacity(0.8),
-              value: controller.progress.value / 5,
+              value: controller.progress.value / 100,
               borderRadius: BorderRadius.circular(12.0),
             ),
           )

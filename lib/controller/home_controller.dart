@@ -9,7 +9,7 @@ import '../model/weather_model.dart';
 
 class HomeController extends GetxController {
   RxBool isReady = false.obs;
-  RxDouble progress = 0.0.obs;
+  RxInt progress = 0.obs;
   final api = ApiServices();
   RxBool isWeather = false.obs;
   WeatherModel? weathers;
@@ -26,10 +26,10 @@ class HomeController extends GetxController {
     await fetchPosition();
   }
 
-  Future<void> progresss() async {
+  Future<void> fetchProgress() async {
     getWeather();
     for (var j = 0; j <= 99; j++) {
-      await Future.delayed(const Duration(milliseconds: 30), () {
+      await Future.delayed(const Duration(milliseconds: 8), () {
         progress.value = progress.value + 1;
       });
     }
@@ -54,12 +54,12 @@ class HomeController extends GetxController {
       permission = await geolocatorPlatform.requestPermission();
       if (permission == LocationPermission.denied) {
         showDialog('Location Permisson', 'You denied the permisson');
-        progresss();
+        fetchProgress();
       }
     }
     if (permission == LocationPermission.deniedForever) {
       showDialog('Location Permisson', 'You denied the permisson forever');
-      progresss();
+      fetchProgress();
     }
     await geolocatorPlatform
         .getCurrentPosition(
@@ -67,7 +67,7 @@ class HomeController extends GetxController {
                 const LocationSettings(accuracy: LocationAccuracy.high))
         .then((value) {
       position = value;
-      progresss();
+      fetchProgress();
     }).catchError((error) {
       showDialog('Error', error.toString());
     });
