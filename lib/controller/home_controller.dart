@@ -27,13 +27,16 @@ class HomeController extends GetxController {
   }
 
   Future<void> progresss() async {
+    getWeather();
     for (var j = 0; j <= 99; j++) {
       await Future.delayed(const Duration(milliseconds: 30), () {
         progress.value = progress.value + 1;
       });
     }
     if (progress.value >= 100) {
-      getWeather();
+      isReady.value = true;
+      showDialog('Did you know ?',
+          'This portfolio will also look great on ${ResponsiveBreakpoints.of(Get.context!).equals(MOBILE) ? 'web' : 'mobile'}');
     }
   }
 
@@ -83,9 +86,6 @@ class HomeController extends GetxController {
         var jsonResponse = convert.jsonDecode(response.toString());
         weathers = WeatherModel.fromJson(jsonResponse);
         isWeather.value = true;
-        isReady.value = true;
-        showDialog('Did you know ?',
-            'This portfolio will also look great on ${ResponsiveBreakpoints.of(Get.context!).equals(MOBILE) ? 'web' : 'mobile'}');
       }
     } catch (e) {
       showDialog('Error', e.toString());
