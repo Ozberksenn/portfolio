@@ -5,14 +5,12 @@ import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/routes/routes.dart';
 import 'package:portfolio/theme/theme.dart';
 import 'package:portfolio/utils/app_routes.dart';
-import 'controller/home_controller.dart';
 import 'utils/dictionary.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() async {
   await GetStorage.init();
   Get.put(AppController());
-  Get.put(HomeController());
   runApp(const MyApp());
 }
 
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
       getPages: routes(),
-      initialRoute: AppRoutes.splash,
+      initialRoute: AppRoutes.home,
       locale: const Locale('tr'),
       translations: Dictionary(),
       builder: (context, child) => ResponsiveBreakpoints.builder(
