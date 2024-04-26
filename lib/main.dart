@@ -10,7 +10,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 void main() async {
   await GetStorage.init();
-  Get.put(AppController());
   runApp(const MyApp());
 }
 

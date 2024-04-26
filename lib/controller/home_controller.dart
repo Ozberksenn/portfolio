@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert' as convert;
 import 'package:geolocator_web/geolocator_web.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:portfolio/services/services.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -15,6 +16,7 @@ class HomeController extends GetxController {
   WeatherModel? weathers;
   Position? position;
   final GeolocatorPlatform geolocatorPlatform = GeolocatorPlatform.instance;
+  GetStorage box = Get.put(GetStorage());
   @override
   void onInit() {
     super.onInit();

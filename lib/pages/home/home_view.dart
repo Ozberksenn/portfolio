@@ -13,12 +13,13 @@ import 'widgets/content_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
-  final AppController appController = Get.find();
+  final AppController appController = Get.put(AppController());
   final HomeController controller = Get.put(HomeController());
-  final box = GetStorage();
+  // var box = GetStorage();
+  final GetStorage box = Get.put(GetStorage());
   @override
   Widget build(BuildContext context) {
-    String lang = box.read('lang');
+    String lang = box.read('lang') ?? 'en';
     return Obx(() => Scaffold(
         body: controller.isReady.value == true
             ? Container(

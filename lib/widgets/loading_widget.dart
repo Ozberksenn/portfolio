@@ -23,9 +23,9 @@ Widget loading() {
           ),
           paddingVertical32(),
           Container(
-            padding: const EdgeInsets.all(28.0),
+            padding: const EdgeInsets.symmetric(vertical: 22.0),
             width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
-                ? Get.width / 2
+                ? Get.width / 3
                 : Get.width / 5,
             child: LinearProgressIndicator(
               backgroundColor: white,

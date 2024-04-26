@@ -3,13 +3,32 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class AppController extends GetxController {
-  final box = GetStorage();
+  GetStorage box = Get.put(GetStorage());
 
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    box.write('lang', 'en');
+    checkLanguage();
+  }
+
+  void checkLanguage() {
+    // Kaydedilmiş dilin alınması
+    String? lang = box.read('lang');
+    // Eğer kaydedilmiş dil yoksa veya boşsa, varsayılan olarak 'en' dilini kullan
+    if (lang == null || lang.isEmpty) {
+      lang = 'en';
+      box.write('lang', lang);
+    }
+    // Dilin güncellenmesi
+    updateLocale(lang);
+  }
+
+  void updateLocale(String lang) {
+    // Locale nesnesinin oluşturulması
+    Locale locale = lang == 'tr' ? const Locale('en') : const Locale('tr');
+    // GetX'in locale'nin güncellenmesi
+    Get.updateLocale(locale);
   }
 
   void changeLanguage(lang) {
