@@ -12,6 +12,7 @@ import 'package:portfolio/pages/home/widgets/weather_widgets.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/custom_bottom_sheet_widget.dart';
 import 'package:portfolio/widgets/padding_widgets.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import '../pages/home/widgets/map_image_widget.dart';
 
 Widget header(AppController appController, lang) {
@@ -61,28 +62,31 @@ Widget header(AppController appController, lang) {
                     )),
               ],
             ),
-            Row(
-              children: [
-                Container(
-                    decoration: BoxDecoration(
-                        color: white, borderRadius: BorderRadius.circular(4.0)),
-                    margin: const EdgeInsets.symmetric(horizontal: 12.0),
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                    child: InkWell(
-                      onTap: () => appController.changeLanguage(lang),
-                      child: Text(
-                        lang.toString().toUpperCase(),
-                        style: Get.textTheme.titleSmall,
+            ResponsiveBreakpoints.of(Get.context!).smallerThan(DESKTOP)
+                ? const SizedBox()
+                : Row(
+                    children: [
+                      Container(
+                          decoration: BoxDecoration(
+                              color: white,
+                              borderRadius: BorderRadius.circular(4.0)),
+                          margin: const EdgeInsets.symmetric(horizontal: 12.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                          child: InkWell(
+                            onTap: () => appController.changeLanguage(lang),
+                            child: Text(
+                              lang.toString().toUpperCase(),
+                              style: Get.textTheme.titleSmall,
+                            ),
+                          )),
+                      paddingHorizontal8(),
+                      Text(
+                        formatDateTime(DateTime.now()),
+                        style: whiteBodySmall,
                       ),
-                    )),
-                paddingHorizontal8(),
-                Text(
-                  formatDateTime(DateTime.now()),
-                  style: whiteBodySmall,
-                ),
-                paddingHorizontal8()
-              ],
-            )
+                      paddingHorizontal8()
+                    ],
+                  )
           ],
         ),
       ),

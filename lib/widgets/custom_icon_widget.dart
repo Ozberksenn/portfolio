@@ -15,10 +15,12 @@ Widget custoumIcon(
       InkWell(
         onTap: onTap,
         child: Container(
-          width:
-              ResponsiveBreakpoints.of(Get.context!).equals(DESKTOP) ? 46 : 60,
-          height:
-              ResponsiveBreakpoints.of(Get.context!).equals(DESKTOP) ? 46 : 60,
+          width: ResponsiveBreakpoints.of(Get.context!).largerThan(MOBILE)
+              ? 46
+              : 60,
+          height: ResponsiveBreakpoints.of(Get.context!).largerThan(MOBILE)
+              ? 46
+              : 60,
           decoration: BoxDecoration(
               image: imageUrl != null
                   ? DecorationImage(

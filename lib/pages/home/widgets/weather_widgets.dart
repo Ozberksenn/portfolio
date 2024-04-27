@@ -11,8 +11,8 @@ Widget weather(HomeController controller) {
     child: BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
       child: Container(
-        width: Get.width / 7,
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(
+            top: 16.0, bottom: 16.0, right: 100, left: 16),
         decoration: BoxDecoration(
             color: blackOpacity,
             borderRadius: BorderRadius.circular(16.0),

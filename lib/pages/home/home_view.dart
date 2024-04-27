@@ -45,7 +45,9 @@ class HomeView extends StatelessWidget {
                     SizedBox(
                         width: ResponsiveBreakpoints.of(context).equals(MOBILE)
                             ? Get.width / 1.1
-                            : Get.width / 3.6,
+                            : ResponsiveBreakpoints.of(context).equals(TABLET)
+                                ? Get.width / 1.8
+                                : Get.width / 3.4,
                         child: bottom()),
                     paddingVertical16()
                   ],

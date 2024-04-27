@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:portfolio/controller/app_controller.dart';
 import 'package:portfolio/routes/routes.dart';
 import 'package:portfolio/theme/theme.dart';
 import 'package:portfolio/utils/app_routes.dart';
@@ -31,8 +30,8 @@ class MyApp extends StatelessWidget {
         child: child!,
         breakpoints: [
           const Breakpoint(start: 0, end: 450, name: MOBILE),
-          const Breakpoint(start: 451, end: 800, name: TABLET),
-          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+          const Breakpoint(start: 451, end: 1169, name: TABLET),
+          const Breakpoint(start: 1170, end: 1920, name: DESKTOP),
           const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
       ),

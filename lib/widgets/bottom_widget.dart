@@ -22,7 +22,9 @@ Widget bottom() {
           Container(
               width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
                   ? Get.width / 1.1
-                  : Get.width / 3.6,
+                  : ResponsiveBreakpoints.of(Get.context!).equals(TABLET)
+                      ? Get.width / 1.8
+                      : Get.width / 3.4,
               height: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
                   ? 100
                   : 75,
