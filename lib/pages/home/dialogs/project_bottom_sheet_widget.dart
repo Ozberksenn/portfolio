@@ -32,16 +32,16 @@ Widget projectBottomSheet() {
                 ),
                 const Divider(),
                 SizedBox(
-                  height: Get.height / 1.6,
+                  height: Get.height / 1.5,
                   child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           childAspectRatio:
                               ResponsiveBreakpoints.of(Get.context!)
-                                      .equals(MOBILE)
-                                  ? 1
-                                  : 2,
+                                      .largerThan(MOBILE)
+                                  ? 1.7
+                                  : 1,
                           crossAxisCount: ResponsiveBreakpoints.of(Get.context!)
-                                  .equals(MOBILE)
+                                  .between(MOBILE, TABLET)
                               ? 1
                               : 2),
                       itemCount: projectData.length,

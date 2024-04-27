@@ -15,7 +15,6 @@ class HomeView extends StatelessWidget {
   HomeView({super.key});
   final AppController appController = Get.put(AppController());
   final HomeController controller = Get.put(HomeController());
-  // var box = GetStorage();
   final GetStorage box = Get.put(GetStorage());
   @override
   Widget build(BuildContext context) {

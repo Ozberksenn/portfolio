@@ -17,7 +17,9 @@ Widget contactbottomSheet() {
     child: Container(
       width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
           ? Get.width / 1.2
-          : Get.width / 3.6,
+          : ResponsiveBreakpoints.of(Get.context!).equals(TABLET)
+              ? Get.width / 2
+              : Get.width / 3.6,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -32,7 +34,8 @@ Widget contactbottomSheet() {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+                  width: ResponsiveBreakpoints.of(Get.context!)
+                          .between(MOBILE, TABLET)
                       ? Get.width / 1.6
                       : Get.width / 5,
                   child: ListTile(
@@ -58,7 +61,8 @@ Widget contactbottomSheet() {
                 ),
                 paddingVertical16(),
                 SizedBox(
-                  width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
+                  width: ResponsiveBreakpoints.of(Get.context!)
+                          .between(MOBILE, TABLET)
                       ? Get.width / 1.6
                       : Get.width / 6,
                   child: Row(

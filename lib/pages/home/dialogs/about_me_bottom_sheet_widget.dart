@@ -16,7 +16,9 @@ Widget aboutMeBottomSheet() {
     child: Container(
       width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
           ? Get.width / 1.2
-          : Get.width / 3.8,
+          : ResponsiveBreakpoints.of(Get.context!).equals(TABLET)
+              ? Get.width / 2
+              : Get.width / 3.8,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: dark,
@@ -40,9 +42,10 @@ Widget aboutMeBottomSheet() {
           Text("Developer".tr, style: whiteBodySmall),
           paddingVertical32(),
           SizedBox(
-            width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
-                ? Get.width
-                : Get.width / 5,
+            width:
+                ResponsiveBreakpoints.of(Get.context!).between(MOBILE, TABLET)
+                    ? Get.width
+                    : Get.width / 5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -67,9 +70,10 @@ Widget aboutMeBottomSheet() {
           ),
           paddingVertical32(),
           SizedBox(
-            width: ResponsiveBreakpoints.of(Get.context!).equals(MOBILE)
-                ? Get.width
-                : Get.width / 5,
+            width:
+                ResponsiveBreakpoints.of(Get.context!).between(MOBILE, TABLET)
+                    ? Get.width
+                    : Get.width / 5,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
