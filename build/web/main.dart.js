@@ -23264,7 +23264,7 @@ default:return B.az}},
 ahO:function ahO(a){this.a=a},
 ahj:function ahj(a){this.a=a},
 aGj(){var s=null
-return A.a([A.ans(s,s,s,B.Dn,B.Da,B.U,s,!1,s,!0,s,"/home",!0,new A.ahy(),s,s,s,!0,!0,s,s,s,s,t.z)],t.RT)},
+return A.a([A.ans(s,s,s,B.Dn,B.Da,B.U,s,!1,s,!0,s,"/",!0,new A.ahy(),s,s,s,!0,!0,s,s,s,s,t.z)],t.RT)},
 ahy:function ahy(){},
 CM:function CM(a,b,c,d,e){var _=this
 _.as=a
@@ -71804,7 +71804,7 @@ $1(a){A.oP("Error",J.bN(a))},
 $S:15}
 A.GM.prototype={
 U(a){var s=$.auW(),r=A.aGj(),q=t.N
-return new A.vb("/home",new A.a1Y(),"Portfolio",s,new A.Vy(A.aL(["en",A.aL(["Projects","Projeler","Resume","\xd6z Ge\xe7mi\u015f","About Me","Hakk\u0131mda","Contact","\u0130leti\u015fim","share","payla\u015f","mail","posta","call","ara","Mobile Developer","Mobil Geli\u015ftirici","1+ years","1+ deneyim","Skill","Beceriler","My Projects","Projelerim","Experience","Deneyim","Developer","Geli\u015ftirici","Clouds","So\u011fuk","Clear","A\xe7\u0131k","Rain","Ya\u011fmurlu","Language","Dil","Weather","Hava Durumu","Map","Konum","Did you know ?","Biliyor musun ?","This portfolio will also look great on web","Bu portf\xf6y web de harika g\xf6r\xfcnecek"],q,q)],q,t.GU)),B.ho,!1,r,null)}}
+return new A.vb("/",new A.a1Y(),"Portfolio",s,new A.Vy(A.aL(["en",A.aL(["Projects","Projeler","Resume","\xd6z Ge\xe7mi\u015f","About Me","Hakk\u0131mda","Contact","\u0130leti\u015fim","share","payla\u015f","mail","posta","call","ara","Mobile Developer","Mobil Geli\u015ftirici","1+ years","1+ deneyim","Skill","Beceriler","My Projects","Projelerim","Experience","Deneyim","Developer","Geli\u015ftirici","Clouds","So\u011fuk","Clear","A\xe7\u0131k","Rain","Ya\u011fmurlu","Language","Dil","Weather","Hava Durumu","Map","Konum","Did you know ?","Biliyor musun ?","This portfolio will also look great on web","Bu portf\xf6y web de harika g\xf6r\xfcnecek"],q,q)],q,t.GU)),B.ho,!1,r,null)}}
 A.a1Y.prototype={
 $2(a,b){return new A.xs(b,A.a([B.xh,B.xj,B.xi,B.xk],t.At),null,null,!1,!1,null)},
 $S:51}
