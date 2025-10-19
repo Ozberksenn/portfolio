@@ -82,7 +82,7 @@ List<AppIconsModel> applications = [
     bottom: 2,
     name: "Projects",
     image:
-        "https://ucarecdn.com/44265112-94d9-4128-8427-ec8c58a6f486/foldericonmacospng.webp",
+        "https://ucarecdn.com/d4f2a8e4-dca7-415b-93be-573538a092e4/folder.png",
   ),
   AppIconsModel(
     id: 3,
