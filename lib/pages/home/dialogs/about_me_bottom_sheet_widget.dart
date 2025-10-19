@@ -61,7 +61,7 @@ Widget aboutMeBottomSheet() {
                 Expanded(
                   flex: 3,
                   child: Text(
-                    "1+ years".tr,
+                    "3+ years".tr,
                     style: whiteBodySmall,
                   ),
                 )

@@ -3,11 +3,15 @@ import 'package:portfolio/model/project_model.dart';
 import 'package:portfolio/utils/configuration.dart';
 
 List<dynamic> skill = [
-  ["Flutter", "React Native", "Swift"],
-  ["java Script", "Type Script", "Dart"],
-  ["Node JS", "React"],
-  ["Html", "Css", "Tailwind"],
-  ["PostgreSQL", "Firebase", "MongoDB"],
+  ["Flutter", "React Native", "React"],
+  ["Type Script", "Dart"],
+  [
+    "java Script",
+    "Node JS",
+  ],
+  ["HTML", "CSS", "Tailwind"],
+  ["AntDesign", "ShadCN"],
+  ["MSSQL", "Firebase", "MongoDB"],
 ];
 
 List<ProjectModel> projectData = [
