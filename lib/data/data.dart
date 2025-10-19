@@ -82,7 +82,7 @@ List<AppIconsModel> applications = [
     bottom: 2,
     name: "Projects",
     image:
-        "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png",
+        "https://ucarecdn.com/44265112-94d9-4128-8427-ec8c58a6f486/foldericonmacospng.webp",
   ),
   AppIconsModel(
     id: 3,
