@@ -82,7 +82,7 @@ List<AppIconsModel> applications = [
     bottom: 2,
     name: "Projects",
     image:
-        "https://ucarecdn.com/d4f2a8e4-dca7-415b-93be-573538a092e4/folder.png",
+        "https://ucarecdn.com/287ba6fa-9693-4f3c-9df7-0dec3aafcbb5/images.png",
   ),
   AppIconsModel(
     id: 3,
